@@ -110,7 +110,7 @@ if __name__=='__main__':
             speak('I can answer to computational and geographical questions  and what question do you want to ask now')
             question=takeCommand()
             app_id="Paste your unique ID here "
-            client = wolframalpha.Client('R2K75H-7ELALHR35X') #MAKE AN ACCOUNT
+            client = wolframalpha.Client('XP4G3A-XXR48W527Q') #USE OWN APP ID
             res = client.query(question)
             answer = next(res.results).text
             speak(answer)
