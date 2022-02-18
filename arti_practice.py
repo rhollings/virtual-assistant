@@ -1,13 +1,13 @@
-import speech_recognition as sr #identifies whatever the user speaks and converts the speech to text
-import pyttsx3 #text to speech conversion library
+import speech_recognition as sr 
+import pyttsx3 
 import datetime
 import wikipedia
-import webbrowser #in-built package in python. It extracts data from the web
+import webbrowser 
 import os
 import time
-import subprocess #process various system commands like to log off or to restart your PC
-#from ecapture import ecapture as ec #module is used to capture images from your camera
-import wolframalpha # see https://www.wolfram.com/language/ 
+import subprocess
+#from ecapture import ecapture as ec 
+import wolframalpha 
 import json
 import requests
 
@@ -66,16 +66,20 @@ if __name__=='__main__':
         if statement==0:
             continue
         if "good bye" in statement or "ok bye" in statement or "stop" in statement:
-            speak('your personal assistant G-one is shutting down,Good bye')
-            print('your personal assistant G-one is shutting down,Good bye')
+            speak('your personal assistant Arti is shutting down,Good bye')
+            print('your personal assistant Arti is shutting down,Good bye')
             break
-        if 'wikipedia' in statement:
+        
+        elif 'hi' in statement or 'hello' in statement or 'hey' in statement:
+            speak('Hello, may I assist with something?')
+
+        elif 'wikipedia' in statement:
             speak('Searching Wikipedia...')
             statement = statement.replace("wikipedia", "")
             results = wikipedia.summary(statement, sentences=3)
             speak("According to Wikipedia")
             print(results)
-            speak(results)
+            speak(results)        
 
         elif 'open youtube' in statement:
             webbrowser.open_new_tab("https://www.youtube.com")
@@ -93,12 +97,12 @@ if __name__=='__main__':
             time.sleep(5)
 
         elif 'time' in statement:
-            strTime=datetime.datetime.now().strftime("%H:%M:%S")
+            strTime=datetime.datetime.now().strftime("%I:%M:%p")
             speak(f"the time is {strTime}")
 
         elif 'news' in statement:
-            news = webbrowser.open_new_tab("https://timesofindia.indiatimes.com/home/headlines")
-            speak('Here are some headlines from the Times of India,Happy reading')
+            news = webbrowser.open_new_tab("https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en")
+            speak('Here is the latest news')
             time.sleep(6)
 
         elif 'search'  in statement:
@@ -106,20 +110,20 @@ if __name__=='__main__':
             webbrowser.open_new_tab(statement)
             time.sleep(5)
 
-        elif 'ask' in statement:
-            speak('I can answer to computational and geographical questions  and what question do you want to ask now')
+        elif 'question' in statement:
+            speak('I can answer computational and geographical questions, what question do you want to ask?')
             question=takeCommand()
-            app_id="Paste your unique ID here "
-            client = wolframalpha.Client('XP4G3A-XXR48W527Q') #USE OWN APP ID
+            app_id="XP4G3A-XXR48W527Q"
+            client = wolframalpha.Client(app_id) #USE OWN APP ID
             res = client.query(question)
             answer = next(res.results).text
             speak(answer)
             print(answer)
 
         elif 'who are you' in statement or 'what can you do' in statement:
-            speak('I am G-one version 1 point O your personal assistant. I am programmed to minor tasks like'
-                  'opening youtube,google chrome, gmail and stackoverflow ,predict time,take a photo,search wikipedia,predict weather' 
-                  'In different cities, get top headline news from times of india and you can ask me computational or geographical questions too!')
+            speak('I am Arti version 1 point O, your virtual assistant. I am programmed to do minor tasks like'
+                  'opening youtube,google chrome, gmail and stackoverflow ,tell time, search wikipedia, tell weather' 
+                  'In different cities, get news and you can ask me computational or geographical questions too!')
 
 
         elif "who made you" in statement or "who created you" in statement or "who discovered you" in statement:
@@ -127,7 +131,7 @@ if __name__=='__main__':
             print("I was built by Rod")
 
         elif "weather" in statement:
-            api_key="Apply your unique ID"
+            api_key="56ca487c31152ebcada8f9c7ab0a4ef3" 
             base_url="https://api.openweathermap.org/data/2.5/weather?"
             speak("what is the city name")
             city_name=takeCommand()
@@ -136,17 +140,17 @@ if __name__=='__main__':
             x=response.json()
             if x["cod"]!="404":
                 y=x["main"]
-                current_temperature = y["temp"]
+                current_temperature = y["temp"] - 273.15
                 current_humidiy = y["humidity"]
                 z = x["weather"]
                 weather_description = z[0]["description"]
-                speak(" Temperature in kelvin unit is " +
+                speak(" Temperature in celsius unit is " +
                       str(current_temperature) +
                       "\n humidity in percentage is " +
                       str(current_humidiy) +
                       "\n description  " +
                       str(weather_description))
-                print(" Temperature in kelvin unit = " +
+                print(" Temperature in celsius unit = " +
                       str(current_temperature) +
                       "\n humidity (in percentage) = " +
                       str(current_humidiy) +
