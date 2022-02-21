@@ -138,6 +138,10 @@ if __name__=='__main__':
                 if 'abilities' in help:
                     ability = what_can(robin1)
                     speak(ability)
+                elif 'information' in help:
+                    x = takeCommand().lower()
+                    info = all_info(robin1, x)
+                    speak(info)
                 elif 'never mind':
                     continue
             elif 'red hood' in hero or 'jason' in hero:
