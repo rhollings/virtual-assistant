@@ -10,6 +10,13 @@ import subprocess
 import wolframalpha 
 import json
 import requests
+from funcs.anime_funcs import have_you_watched
+from funcs.goth_knights import *
+
+from dotenv import load_dotenv
+
+load_dotenv()
+WEATHER_KEY = os.getenv('WEATHER_KEY')
 
 # https://github.com/mmirthula02/AI-Personal-Voice-assistant-using-Python/blob/master/venv/virtual.py
 
@@ -54,20 +61,20 @@ def takeCommand():
         return statement
 
 print("Loading your AI personal assistant")
-speak("Loading your AI personal assistant")
+speak("Loading ")
 
 wishMe()
 
 if __name__=='__main__':
 
     while True:
-        speak("Tell me how can I help you now?")
+        speak("How can I help you?")
         statement = takeCommand().lower()
         if statement==0:
             continue
         if "good bye" in statement or "ok bye" in statement or "stop" in statement:
-            speak('your personal assistant Arti is shutting down,Good bye')
-            print('your personal assistant Arti is shutting down,Good bye')
+            speak('Arti is shutting down, Good bye')
+            print('your virtual assistant Arti is shutting down,Good bye')
             break
         
         elif 'hi' in statement or 'hello' in statement or 'hey' in statement:
@@ -120,6 +127,50 @@ if __name__=='__main__':
             speak(answer)
             print(answer)
 
+        elif 'gotham knight' in statement:
+            speak('Loading Gotham Knights video game logic, who do you need?')
+            hero = takeCommand().lower()
+            if 'no thanks' in hero:
+                continue
+            elif 'nightwing' in hero or 'grayson' in hero:
+                speak('Hero chosen is Nightwing')
+                help = takeCommand().lower()
+                if 'abilities' in help:
+                    ability = what_can(robin1)
+                    speak(ability)
+                elif 'never mind':
+                    continue
+            elif 'red hood' in hero or 'jason' in hero:
+                speak('Hero chosen is Red Hood')
+                help = takeCommand().lower()
+                if 'abilities' in help:
+                    ability = what_can(robin2)
+                    speak(ability)
+                elif 'never mind':
+                    continue
+            elif 'batgirl' in hero or 'barbara' in hero:
+                speak('Hero chosen is Batgirl')
+                help = takeCommand().lower()
+                if 'abilities' in help:
+                    ability = what_can(robin3)
+                    speak(ability)
+                elif 'never mind':
+                    continue
+            elif 'robin' in hero or 'tim' in hero:
+                speak('Hero chosen is Robin')
+                help = takeCommand().lower()
+                if 'abilities' in help:
+                    ability = what_can(robin4)
+                    speak(ability)
+                elif 'never mind':
+                    continue
+
+        elif 'recommend' in statement and 'anime' in statement:
+            print('Loading...')
+            anime = have_you_watched()
+            speak("Have you seen " + anime + " ?")
+
+
         elif 'who are you' in statement or 'what can you do' in statement:
             speak('I am Arti version 1 point O, your virtual assistant. I am programmed to do minor tasks like'
                   'opening youtube,google chrome, gmail and stackoverflow ,tell time, search wikipedia, tell weather' 
@@ -127,12 +178,18 @@ if __name__=='__main__':
 
 
         elif "who made you" in statement or "who created you" in statement or "who discovered you" in statement:
-            speak("I was built by Rod")
-            print("I was built by Rod")
+            speak("I was created by Rod")
+            print("I was created by Rod")
+
+        elif "rod" in statement or "pj" in statement:
+            speak("PJ is a genuis, the man you speak of is my creator.")
+
+        elif 'cecile' in statement or 'boo boo' in statement:
+            speak('meanie pants, i mean, she is a beautiful french lady married to rod')
 
         elif "weather" in statement:
-            api_key="56ca487c31152ebcada8f9c7ab0a4ef3" 
-            base_url="https://api.openweathermap.org/data/2.5/weather?"
+            api_key = WEATHER_KEY 
+            base_url = "https://api.openweathermap.org/data/2.5/weather?"
             speak("what is the city name")
             city_name=takeCommand()
             complete_url=base_url+"appid="+api_key+"&q="+city_name
