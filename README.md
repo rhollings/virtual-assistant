@@ -21,10 +21,10 @@ Imports
 'pyttsx3' -> text to speech 
 'wikipedia' -> for wiki searches    
 'time' -> helps datetime    
-'wolframalpha' -> for geo questions 
-'requests' -> for HTTP requests 
-'ecapture' -> for taking photos 
-'json' -> for reading json data 
+'wolframalpha' -> for geo questions  
+'requests' -> for HTTP requests     
+'ecapture' -> for taking photos     
+'json' -> for reading json data     
 
 API Docs
 
