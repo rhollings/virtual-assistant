@@ -58,9 +58,13 @@ robin4 = {
     "skills_list": ["espionage", "detective skills", "genius intellect", "hacking"],
     "skills": "Robin's skills include espionage, detective skills, genius intellect, and hacking",
     "facts": {
-        "01": "Tim's detective skills rivals that of Batman himself",
+        0: "Tim's detective skills rivals that of Batman himself",
+        1: "Tim is the third male robin, after Dick and Jason"
     }
 }
+
+import random
+
 
 def all_info(robin, res):
     return robin[res]
@@ -68,4 +72,13 @@ def all_info(robin, res):
 def what_can(robin):
     robin["skills"] #need to list thru
     return robin["skills"]
-    #print(robin["hero_name"])
+    #print(robin["hero_name"]) for testing
+
+def tell_fact(robin):
+    x = len(robin["facts"]) #amount of facts on hero
+    y = random.randint(0, x)
+    return robin["facts"][y]
+    #print(robin["facts"][y]) for testing
+
+
+tell_fact(robin4)
