@@ -12,6 +12,7 @@ import json
 import requests
 from funcs.anime_funcs import have_you_watched
 from funcs.goth_knights import *
+from funcs.movies import *
 
 from dotenv import load_dotenv
 
@@ -73,7 +74,7 @@ if __name__=='__main__':
         statement = takeCommand().lower()
         if statement==0:
             continue
-        if "good bye" in statement or "ok bye" in statement or "stop" in statement:
+        if "goodbye" in statement or "ok bye" in statement or "stop" in statement:
             speak('Arti is shutting down, Good bye')
             print('your virtual assistant Arti is shutting down,Good bye')
             break
@@ -204,30 +205,39 @@ if __name__=='__main__':
         elif 'cecile' in statement or 'boo boo' in statement:
             speak('meanie pants, i mean, she is a beautiful french lady married to rod')
 
+        elif 'movies' in statement:
+            x = get_trending_movies()
+            speak(x)
+        
         elif "weather" in statement:
             api_key = WEATHER_KEY 
-            base_url = "https://api.openweathermap.org/data/2.5/weather?"
+            base_url = "http://api.openweathermap.org/data/2.5/weather?q="
             speak("what is the city name")
             city_name=takeCommand()
-            complete_url=base_url+"appid="+api_key+"&q="+city_name
+            complete_url=base_url+city_name+"&units=metric"+"&appid="+api_key
             response = requests.get(complete_url)
             x=response.json()
             if x["cod"]!="404":
                 y=x["main"]
-                current_temperature = y["temp"] - 273.15
-                current_humidiy = y["humidity"]
+                current_temperature = y["temp"]
+                temp_min = y["temp_min"]
+                temp_max = y ["temp_max"]
                 z = x["weather"]
                 weather_description = z[0]["description"]
-                speak(" Temperature in celsius unit is " +
+                speak(" Temperature in celsius is " +
                       str(current_temperature) +
-                      "\n humidity in percentage is " +
-                      str(current_humidiy) +
+                      "\n with a low of " +
+                      str(temp_min) +
+                      "\n and a high of " +
+                      str(temp_max) +
                       "\n description  " +
                       str(weather_description))
                 print(" Temperature in celsius unit = " +
                       str(current_temperature) +
-                      "\n humidity (in percentage) = " +
-                      str(current_humidiy) +
+                      "\n Lowest = " +
+                      str(temp_min) +
+                      "\n Highest = " +
+                      str(temp_max) +
                       "\n description = " +
                       str(weather_description))
         elif "log off" in statement or "sign out" in statement:
