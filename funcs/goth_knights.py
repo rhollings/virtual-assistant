@@ -10,7 +10,8 @@ robin1 = {
     "skills_list": ["acrobatics", "stealth", "escapology", "hacking"],
     "skills" : "Nightwing's skills include acrobatics, stealth, escapology, hacking and more",
     "facts": {
-        "01": "Nightwing is known to be the greatest acrobat in his universe",
+        0: "Nightwing is known to be the greatest acrobat in his universe",
+        1: "Grayson is Bruce's first robin, the original boy wonder"
     }
 }
 
@@ -26,7 +27,8 @@ robin2 = {
     "skills_lists": ["espionage", "disguise", "strategist", "weapon mastery"],
     "skills": "Red Hood's skills include espionage, disguise, strategist, weapon mastery and more",
     "facts": {
-        "01": "After bathing in the Lazarus, Jason's body has enhanced strength, stamina and durability",
+        0: "After bathing in the Lazarus, Jason's body has enhanced strength, stamina and durability",
+        1: "Bruce once found Jason stealing the tires from the batmobile"
     }
 }
 
@@ -42,7 +44,8 @@ robin3 = {
     "skills_list": ["hacking", "acrobatics", "photographic memory", "informations expert"],
     "skills": "Batgirl's skills include hacking, acrobatics, a photographic memory, and is a informations expert",
     "facts": {
-        "01": "Batgirl has control over Luthor's advanced satelites without his knowledge",
+        0: "Batgirl has control over Luthor's advanced satelites without his knowledge",
+        1: "Barbara's father is James Gordon, the Commissioner"
     }
 }
 
@@ -79,6 +82,3 @@ def tell_fact(robin):
     y = random.randint(0, x)
     return robin["facts"][y]
     #print(robin["facts"][y]) for testing
-
-
-tell_fact(robin4)

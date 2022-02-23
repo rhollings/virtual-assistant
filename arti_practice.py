@@ -17,6 +17,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 WEATHER_KEY = os.getenv('WEATHER_KEY')
+WOLFRAMALPHA_KEY = os.getenv('WOLFRAMALPHA_KEY')
 
 # https://github.com/mmirthula02/AI-Personal-Voice-assistant-using-Python/blob/master/venv/virtual.py
 
@@ -120,7 +121,7 @@ if __name__=='__main__':
         elif 'question' in statement:
             speak('I can answer computational and geographical questions, what question do you want to ask?')
             question=takeCommand()
-            app_id="XP4G3A-XXR48W527Q"
+            app_id= WOLFRAMALPHA_KEY
             client = wolframalpha.Client(app_id) #USE OWN APP ID
             res = client.query(question)
             answer = next(res.results).text
@@ -135,9 +136,9 @@ if __name__=='__main__':
             elif 'nightwing' in hero or 'grayson' in hero:
                 speak('Hero chosen is Nightwing')
                 help = takeCommand().lower()
-                if 'abilities' in help:
-                    ability = what_can(robin1)
-                    speak(ability)
+                if 'something' in help:
+                    fact = tell_fact(robin1)
+                    speak(fact)
                 elif 'information' in help:
                     x = takeCommand().lower()
                     info = all_info(robin1, x)
@@ -147,25 +148,37 @@ if __name__=='__main__':
             elif 'red hood' in hero or 'jason' in hero:
                 speak('Hero chosen is Red Hood')
                 help = takeCommand().lower()
-                if 'abilities' in help:
-                    ability = what_can(robin2)
-                    speak(ability)
+                if 'something' in help:
+                    fact = tell_fact(robin2)
+                    speak(fact)
+                elif 'information' in help:
+                    x = takeCommand().lower()
+                    info = all_info(robin2, x)
+                    speak(info)
                 elif 'never mind':
                     continue
             elif 'batgirl' in hero or 'barbara' in hero:
                 speak('Hero chosen is Batgirl')
                 help = takeCommand().lower()
-                if 'abilities' in help:
-                    ability = what_can(robin3)
-                    speak(ability)
+                if 'something' in help:
+                    fact = tell_fact(robin3)
+                    speak(fact)
+                elif 'information' in help:
+                    x = takeCommand().lower()
+                    info = all_info(robin3, x)
+                    speak(info)
                 elif 'never mind':
                     continue
             elif 'robin' in hero or 'tim' in hero:
                 speak('Hero chosen is Robin')
                 help = takeCommand().lower()
-                if 'abilities' in help:
-                    ability = what_can(robin4)
-                    speak(ability)
+                if 'something' in help:
+                    fact = tell_fact(robin4)
+                    speak(fact)
+                elif 'information' in help:
+                    x = takeCommand().lower()
+                    info = all_info(robin4, x)
+                    speak(info)
                 elif 'never mind':
                     continue
 
