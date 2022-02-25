@@ -1,8 +1,10 @@
 import requests
-import urllib
+import urllib.parse
 import pandas as pd
-from requests_html import HTML
+from requests_html import HTML, HTML
 from requests_html import HTMLSession
+
+f = HTML.html.find()
 
 def get_source(url):
   """Return the source code for the provided URL. 
@@ -21,6 +23,26 @@ def get_source(url):
 
   except requests.exceptions.RequestException as e:
       print(e)
+
+def scrape_google(query):
+
+  query = urllib.parse.quote_plus(query)
+  response = get_source("https://www.google.co.uk/search?q=" + query)
+
+  links = list(response.html.absolute_links)
+  google_domains = ('https://www.google.', 
+                    'https://google.', 
+                    'https://webcache.googleusercontent.', 
+                    'http://webcache.googleusercontent.', 
+                    'https://policies.google.',
+                    'https://support.google.',
+                    'https://maps.google.')
+
+  for url in links[:]:
+      if url.startswith(google_domains):
+          links.remove(url)
+
+  return links
 
 def get_results(query):
   
@@ -57,7 +79,7 @@ def google_search(query):
   return parse_results(response)
 
 
-results = google_search("web scraping")
+results = google_search("where is the eiffel tower")
 print(results)
 
 
