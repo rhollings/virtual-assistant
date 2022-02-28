@@ -12,6 +12,7 @@ import json
 import requests
 from funcs.anime_funcs import have_you_watched
 from funcs.goth_knights import *
+from funcs.misc_funcs import *
 from funcs.movies import *
 
 from dotenv import load_dotenv
@@ -19,8 +20,6 @@ from dotenv import load_dotenv
 load_dotenv()
 WEATHER_KEY = os.getenv('WEATHER_KEY')
 WOLFRAMALPHA_KEY = os.getenv('WOLFRAMALPHA_KEY')
-
-# https://github.com/mmirthula02/AI-Personal-Voice-assistant-using-Python/blob/master/venv/virtual.py
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
@@ -118,6 +117,12 @@ if __name__=='__main__':
             statement = statement.replace("search", "")
             webbrowser.open_new_tab(statement)
             time.sleep(5)
+
+        elif 'test' in statement:
+            statement = statement.replace("test", "")
+            results = google_search(statement)
+            to_speak = results[0]['info']
+            speak(to_speak)
 
         elif 'question' in statement:
             speak('I can answer computational and geographical questions, what question do you want to ask?')

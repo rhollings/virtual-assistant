@@ -1,10 +1,8 @@
 import requests
 import urllib.parse
 import pandas as pd
-from requests_html import HTML, HTML
+from requests_html import HTML
 from requests_html import HTMLSession
-
-f = HTML.html.find()
 
 def get_source(url):
   """Return the source code for the provided URL. 
@@ -27,7 +25,7 @@ def get_source(url):
 def scrape_google(query):
 
   query = urllib.parse.quote_plus(query)
-  response = get_source("https://www.google.co.uk/search?q=" + query)
+  response = get_source("https://www.google.com/search?q=" + query)
 
   links = list(response.html.absolute_links)
   google_domains = ('https://www.google.', 
@@ -47,18 +45,19 @@ def scrape_google(query):
 def get_results(query):
   
   query = urllib.parse.quote_plus(query)
-  response = get_source("https://www.google.co.uk/search?q=" + query)
+  response = get_source("https://www.google.com/search?q=" + query + "&hl=en")
   
   return response
 
 def parse_results(response):
   
-  css_identifier_result = ".tF2Cxc"
-  css_identifier_title = "h3"
-  css_identifier_link = ".yuRUbf a"
-  css_identifier_text = ".IsZvec"
+  css_identifier_info = ".kno-rdesc" #.hgKElc
+  css_identifier_result = ".tF2Cxc" #.tF2Cxc
+  css_identifier_title = "h3" #h3
+  css_identifier_link = ".yuRUbf a" #.yuRUbf a
+  css_identifier_text = ".IsZvec span" #.IsZvec span
   
-  results = response.html.find(css_identifier_result)
+  results = response.html.find(css_identifier_result)[:1]
 
   output = []
   
@@ -67,20 +66,30 @@ def parse_results(response):
     item = {
       'title': result.find(css_identifier_title, first=True).text,
       'link': result.find(css_identifier_link, first=True).attrs['href'],
-      'text': result.find(css_identifier_text, first=True).text
+      #'text': result.find(css_identifier_text, first=True).text
     }
     
     output.append(item)
+
+  data = response.html.find(css_identifier_info)
+
+  l = []
+
+  for d in data:
+    x = {
+      'info': d.find(css_identifier_info, first=True).text
+    }
+    l.append(x)
         
-  return output
+  return l
 
 def google_search(query):
   response = get_results(query)
   return parse_results(response)
 
 
-results = google_search("where is the eiffel tower")
-print(results)
+#results = google_search('where is the eiffel tower')
+#print(results)
 
 
 def tell_joke():

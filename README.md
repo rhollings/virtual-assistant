@@ -24,9 +24,22 @@ Imports
 'wolframalpha' -> for geo questions  
 'requests' -> for HTTP requests     
 'ecapture' -> for taking photos     
-'json' -> for reading json data     
+'json' -> for reading json data   
+<a href="https://docs.python-requests.org/projects/requests-html/en/stable/">'requests_html'</a>  -> for scraping web data
+
 
 API Docs
 
 Wolframalpha = https://www.wolfram.com/language/    
 OpenWeather API = https://home.openweathermap.org/  
+
+
+<!--
+Other Docs
+
+https://github.com/mmirthula02/AI-Personal-Voice-assistant-using-Python/blob/master/venv/virtual.py
+
+https://practicaldatascience.co.uk/data-science/how-to-scrape-google-search-results-using-python 
+
+
+-->
