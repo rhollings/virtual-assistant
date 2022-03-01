@@ -17,6 +17,8 @@ from funcs.movies import *
 
 from dotenv import load_dotenv
 
+from funcs.utils import affirm_speak
+
 load_dotenv()
 WEATHER_KEY = os.getenv('WEATHER_KEY')
 WOLFRAMALPHA_KEY = os.getenv('WOLFRAMALPHA_KEY')
@@ -66,6 +68,8 @@ speak("Loading ")
 
 wishMe()
 
+affirm = affirm_speak()
+
 if __name__=='__main__':
 
     while True:
@@ -90,6 +94,7 @@ if __name__=='__main__':
             speak(results)        
 
         elif 'open youtube' in statement:
+            speak(affirm)
             webbrowser.open_new_tab("https://www.youtube.com")
             speak("youtube is open now")
             time.sleep(5)
@@ -109,6 +114,7 @@ if __name__=='__main__':
             speak(f"the time is {strTime}")
 
         elif 'news' in statement:
+            speak(affirm)
             news = webbrowser.open_new_tab("https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en")
             speak('Here is the latest news')
             time.sleep(6)
@@ -118,11 +124,23 @@ if __name__=='__main__':
             webbrowser.open_new_tab(statement)
             time.sleep(5)
 
-        elif 'test' in statement:
-            statement = statement.replace("test", "")
+        elif 'lookup' in statement:
+            speak(affirm)
+            statement = statement.replace("lookup", "")
             results = google_search(statement)
             to_speak = results[0]['info']
             speak(to_speak)
+
+        elif 'mum joke' in statement: 
+            joke = mama_joke()
+            speak(joke)
+
+        elif 'next' in statement and 'marvel' in statement:
+            speak(affirm)
+            res = next_mcu_title()
+            text = res[0]
+            image = res[1]
+            speak(text)
 
         elif 'question' in statement:
             speak('I can answer computational and geographical questions, what question do you want to ask?')
@@ -189,7 +207,7 @@ if __name__=='__main__':
                     continue
 
         elif 'recommend' in statement and 'anime' in statement:
-            print('Loading...')
+            speak(affirm)
             anime = have_you_watched()
             speak("Have you seen " + anime + " ?")
 
@@ -211,6 +229,7 @@ if __name__=='__main__':
             speak('meanie pants, i mean, she is a beautiful french lady married to rod')
 
         elif 'movies' in statement:
+            speak(affirm)
             x = get_trending_movies()
             speak(x)
         

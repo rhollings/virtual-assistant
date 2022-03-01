@@ -22,3 +22,7 @@ def have_you_watched():
     y = random.randint(0, x)
     anime = anime_list[y]
     return anime
+
+def tell_fact():
+    pass
+

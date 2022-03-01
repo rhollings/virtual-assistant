@@ -1,8 +1,12 @@
+from unittest import result
+from urllib import response
+from numpy import result_type
 import requests
 import urllib.parse
 import pandas as pd
 from requests_html import HTML
 from requests_html import HTMLSession
+import datetime
 
 def get_source(url):
   """Return the source code for the provided URL. 
@@ -92,8 +96,30 @@ def google_search(query):
 #print(results)
 
 
+def mama_joke():
+  response = requests.get("https://yomomma-api.herokuapp.com/jokes")
+  joke = response.json()
+  return joke["joke"]
+
 def tell_joke():
-  pass
+  response = requests.get("") # https://humorapi.com/docs/#Random-Joke ??
+  joke = response.json()
+  return joke
+
+def next_mcu_title(): # https://www.whenisthenextmcufilm.com/api?date=2022-03-01
+  date = datetime.date.today() #need string
+  url = "https://www.whenisthenextmcufilm.com/api?date=2022-03-01"
+  response = requests.get(url)
+  result = response.json()
+  x, res = '', []
+  movie_poster = result["poster_url"]
+  release_date = result["release_date"]
+  title = result["title"]
+  film_show = result["type"]
+  x = 'The next MCU ' + film_show + ', will be ' + title + ' and is set to release by ' + release_date
+  res = [x, movie_poster]
+  return res
+
 
 def tell_peom():
   pass
