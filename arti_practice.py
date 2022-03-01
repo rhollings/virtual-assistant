@@ -77,7 +77,7 @@ if __name__=='__main__':
         statement = takeCommand().lower()
         if statement==0:
             continue
-        if "goodbye" in statement or "ok bye" in statement or "stop" in statement:
+        if "goodbye" in statement or "go to sleep" in statement or "stop" in statement or "take a break" in statement:
             speak('Arti is shutting down, Good bye')
             print('your virtual assistant Arti is shutting down,Good bye')
             break
@@ -124,11 +124,15 @@ if __name__=='__main__':
             webbrowser.open_new_tab(statement)
             time.sleep(5)
 
-        elif 'lookup' in statement:
+        elif 'look up' in statement:
             speak(affirm)
-            statement = statement.replace("lookup", "")
+            statement = statement.replace("look up", "")
             results = google_search(statement)
-            to_speak = results[0]['info']
+            to_speak = results[0]
+            if to_speak == []:
+                to_speak = results[1][0]['text']
+            else:
+                to_speak = to_speak[0]['info']
             speak(to_speak)
 
         elif 'mum joke' in statement: 
@@ -145,7 +149,7 @@ if __name__=='__main__':
         elif 'question' in statement:
             speak('I can answer computational and geographical questions, what question do you want to ask?')
             question=takeCommand()
-            app_id= WOLFRAMALPHA_KEY
+            app_id = WOLFRAMALPHA_KEY
             client = wolframalpha.Client(app_id) #USE OWN APP ID
             res = client.query(question)
             answer = next(res.results).text

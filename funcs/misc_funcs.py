@@ -1,6 +1,4 @@
-from unittest import result
 from urllib import response
-from numpy import result_type
 import requests
 import urllib.parse
 import pandas as pd
@@ -63,6 +61,8 @@ def parse_results(response):
   
   results = response.html.find(css_identifier_result)[:1]
 
+  search_res = []
+
   output = []
   
   for result in results:
@@ -72,6 +72,11 @@ def parse_results(response):
       'link': result.find(css_identifier_link, first=True).attrs['href'],
       #'text': result.find(css_identifier_text, first=True).text
     }
+
+    if result.find(css_identifier_text):
+      item['text'] = result.find(css_identifier_text, first=True).text
+    else:
+      return None
     
     output.append(item)
 
@@ -84,16 +89,20 @@ def parse_results(response):
       'info': d.find(css_identifier_info, first=True).text
     }
     l.append(x)
+
+  search_res.append(l)
+  search_res.append(output)
         
-  return l
+  return search_res
 
 def google_search(query):
   response = get_results(query)
   return parse_results(response)
 
 
-#results = google_search('where is the eiffel tower')
+#results = google_search('where is paris')
 #print(results)
+#print(type(results))
 
 
 def mama_joke():

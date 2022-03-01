@@ -33,7 +33,7 @@ Imports
 
 API Docs
 
-Wolframalpha = https://www.wolfram.com/language/    
+Wolframalpha = https://www.wolfram.com/language/  || https://wolframalpha.readthedocs.io/en/latest/?badge=latest  
 OpenWeather API = https://home.openweathermap.org/  
 Public API's = https://github.com/public-apis/public-apis 
 

@@ -7,8 +7,10 @@ rate = engine.getProperty('rate')
 engine.setProperty('rate', rate-50)
 #engine.say("I will speak this text hello bye bye this that")
 
-engine.say("bat-a-rang and batarang")
-print("bat-a-rang and batarang")
+engine.say("Bonjour, Je m'appelle Arti")
+print("Bonjour, Je m'appelle Arti")
+
+#pyttsx3 does not speak other languages
 
 
 engine.runAndWait()
