@@ -14,10 +14,9 @@ from funcs.anime_funcs import have_you_watched
 from funcs.goth_knights import *
 from funcs.misc_funcs import *
 from funcs.movies import *
-
+from funcs.utils import affirm_speak
 from dotenv import load_dotenv
 
-from funcs.utils import affirm_speak
 
 load_dotenv()
 WEATHER_KEY = os.getenv('WEATHER_KEY')
@@ -144,7 +143,7 @@ if __name__=='__main__':
             res = next_mcu_title()
             text = res[0]
             image = res[1]
-            #webbrowser.open_new_tab(image)
+            webbrowser.open_new_tab(image)
             speak(text)
 
         elif 'question' in statement:
@@ -215,6 +214,11 @@ if __name__=='__main__':
             speak(affirm)
             anime = have_you_watched()
             speak("Have you seen " + anime + " ?")
+        
+        elif 'fact' in statement and 'anime' in statement:
+            speak(affirm)
+            anime = tell_fact()
+            speak("Did you know that: " + anime)
 
 
         elif 'who are you' in statement or 'what can you do' in statement:

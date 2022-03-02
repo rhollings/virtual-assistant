@@ -5,7 +5,7 @@ import pandas as pd
 from requests_html import HTML
 from requests_html import HTMLSession
 import datetime
-from utils import *
+from funcs.utils import tell_date
 
 def get_source(url):
   """Return the source code for the provided URL. 
