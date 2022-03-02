@@ -5,6 +5,7 @@ import pandas as pd
 from requests_html import HTML
 from requests_html import HTMLSession
 import datetime
+from utils import *
 
 def get_source(url):
   """Return the source code for the provided URL. 
@@ -116,8 +117,9 @@ def tell_joke():
   return joke
 
 def next_mcu_title(): # https://www.whenisthenextmcufilm.com/api?date=2022-03-01
-  date = datetime.date.today() #need string
-  url = "https://www.whenisthenextmcufilm.com/api?date=2022-03-01"
+  url_date_date = datetime.date.today().strftime("%Y:%m:%d")
+  url_date = url_date_date.replace(":", "-")
+  url = "https://www.whenisthenextmcufilm.com/api?date=" + url_date
   response = requests.get(url)
   result = response.json()
   x, res = '', []
@@ -125,9 +127,12 @@ def next_mcu_title(): # https://www.whenisthenextmcufilm.com/api?date=2022-03-01
   release_date = result["release_date"]
   title = result["title"]
   film_show = result["type"]
-  x = 'The next MCU ' + film_show + ', will be ' + title + ' and is set to release by ' + release_date
+  date_x = tell_date(release_date)
+  x = 'The next MCU ' + film_show + ', will be ' + title + ' and is set to release on the ' + date_x
   res = [x, movie_poster]
   return res
+  #print(type(date))
+  #print(res)
 
 
 def tell_peom():

@@ -144,6 +144,7 @@ if __name__=='__main__':
             res = next_mcu_title()
             text = res[0]
             image = res[1]
+            #webbrowser.open_new_tab(image)
             speak(text)
 
         elif 'question' in statement:
