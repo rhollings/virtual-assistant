@@ -7,7 +7,10 @@ opening_text = [
     "One second",
     "Just a moment",
     "Processing",
-    'Loading...',
+    "Loading...",
+    "Understood",
+    "Right away",
+    "Will do",
 ]
 
 month_texts = {
