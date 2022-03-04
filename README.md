@@ -11,14 +11,12 @@ time: to tell current time
 weather: to display weather of given city   
 news: displays latest news  
 
-In House Libraries
+In House Libraries & Imports
 
 'datetime' -> displays date and time    
 'os' -> to interact with operating system   
 'webbrowser' -> to open internet/extract data   
 'subprocess' -> commands for the computer   
-
-Imports
 
 'speech_recognition' -> speech to text  
 'pyttsx3' -> text to speech 
@@ -28,7 +26,8 @@ Imports
 'requests' -> for HTTP requests     
 'ecapture' -> for taking photos     
 'json' -> for reading json data   
-<a href="https://docs.python-requests.org/projects/requests-html/en/stable/">'requests_html'</a>  -> for scraping web data
+<a href="https://docs.python-requests.org/projects/requests-html/en/stable/">'requests_html'</a>  -> for scraping web data  
+<a href="https://docs.python.org/3/library/sqlite3.html">SQLite3</a> Datbase
 
 
 API Docs
