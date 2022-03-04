@@ -14,7 +14,7 @@ from funcs.anime_funcs import have_you_watched
 from funcs.goth_knights import *
 from funcs.misc_funcs import *
 from funcs.movies import *
-from funcs.utils import affirm_speak
+from funcs.utils import affirm_speak, closing_speak
 from dotenv import load_dotenv
 
 
@@ -68,6 +68,7 @@ speak("Loading ")
 wishMe()
 
 affirm = affirm_speak()
+closing = closing_speak()
 
 if __name__=='__main__':
 
@@ -77,8 +78,9 @@ if __name__=='__main__':
         if statement==0:
             continue
         if "goodbye" in statement or "go to sleep" in statement or "stop" in statement or "take a break" in statement:
-            speak('Arti is shutting down, Good bye')
-            print('your virtual assistant Arti is shutting down,Good bye')
+            #speak('Arti is shutting down, Good bye')
+            speak(closing)
+            print('your virtual assistant Arti is shutting down, Good bye')
             break
         
         elif 'hi' in statement or 'hello' in statement or 'hey' in statement:
@@ -214,17 +216,19 @@ if __name__=='__main__':
             speak(affirm)
             anime = have_you_watched()
             speak("Have you seen " + anime + " ?")
+            print(anime)
         
         elif 'fact' in statement and 'anime' in statement:
             speak(affirm)
             anime = tell_fact()
             speak("Did you know that: " + anime)
+            print("Did you know that: " + anime)
 
 
         elif 'who are you' in statement or 'what can you do' in statement:
-            speak('I am Arti version 1 point O, your virtual assistant. I am programmed to do minor tasks like'
-                  'opening youtube,google chrome, gmail and stackoverflow ,tell time, search wikipedia, tell weather' 
-                  'In different cities, get news and you can ask me computational or geographical questions too!')
+            speak('I am Arti, version 1 point O, a virtual assistant. I am programmed to do minor tasks like '
+                  'searching the web, tell time, weather in different cities, recommend an anime, tell jokes, ' 
+                  'get news and answer computational or geographical questions too!')
 
 
         elif "who made you" in statement or "who created you" in statement or "who discovered you" in statement:

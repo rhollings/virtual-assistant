@@ -13,6 +13,16 @@ opening_text = [
     "Will do",
 ]
 
+closing_text = [
+    "See you later boss",
+    "Taking a break",
+    "I'm here if you need me",
+    "Wake me if you need me",
+    "Staying close by",
+    "Later boss",
+    "Later",
+]
+
 month_texts = {
     "01": "January",
     "02": "Feburary",
@@ -67,6 +77,11 @@ def affirm_speak():
     y = random.randint(0, x-1)
     return opening_text[y]
     #print(opening_text[y])
+
+def closing_speak():
+    x = len(closing_text)
+    y = random.randint(0, x-1)
+    return closing_text[y]
 
 
 # A better way to tell days
