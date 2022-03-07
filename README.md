@@ -6,10 +6,11 @@ This is repo is my attempt at making a virtual assistant. 'Arti' short for artif
 <h3>CREATOR NOTE</h3>  
 Currently Arti is personalized for me, as it has certain functions I find useful. Yet the code is Open Source and can be modified for other users
 
-Some commands Arti knows:   
-time: to tell current time  
+Some commands Arti knows ===>   
+search: searches web by opening a new tab or reads results directly from search  
 weather: to display weather of given city   
 news: displays latest news  
+jokes/facts: can tell a random joke/fact     
 
 <h3>In House Libraries & Imports</h3>
 
