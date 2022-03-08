@@ -1,4 +1,5 @@
 import random
+from timeit import repeat
 
 opening_text = [
     "I'm on it",
@@ -21,6 +22,14 @@ closing_text = [
     "Staying close by",
     "Later boss",
     "Later",
+]
+
+repeat_mes = [
+    "Pardon",
+    "Please repeat that",
+    "I didn't quite catch that",
+    "I didn't understand",
+    "Can you please speak more clearly",
 ]
 
 month_texts = {
@@ -82,6 +91,11 @@ def closing_speak():
     x = len(closing_text)
     y = random.randint(0, x-1)
     return closing_text[y]
+
+def repeat_speak():
+    x = len(repeat_mes)
+    y = random.randint(0, x-1)
+    return repeat_mes[y]
 
 
 # A better way to tell days

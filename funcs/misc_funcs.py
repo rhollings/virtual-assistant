@@ -138,5 +138,8 @@ def next_mcu_title(): # https://www.whenisthenextmcufilm.com/api?date=2022-03-01
 def tell_peom():
   pass
 
+def tell_riddle():
+  pass
+
 def give_advice():
   pass

@@ -14,7 +14,7 @@ from funcs.anime_funcs import have_you_watched
 from funcs.goth_knights import *
 from funcs.misc_funcs import *
 from funcs.movies import *
-from funcs.utils import affirm_speak, closing_speak
+from funcs.utils import affirm_speak, closing_speak, repeat_speak
 from dotenv import load_dotenv
 
 
@@ -47,6 +47,8 @@ def wishMe():
         speak("It is late User")
         print("It is late")
 
+to_repeat = repeat_speak()
+
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -58,7 +60,8 @@ def takeCommand():
             print(f"User said: {statement}\n")
 
         except Exception as e:
-            speak("Pardon, please say that again")
+            #speak("Pardon, please say that again")
+            speak(to_repeat)
             return "None"
         return statement
 
