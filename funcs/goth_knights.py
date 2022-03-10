@@ -7,6 +7,7 @@ robin1 = {
         "main_waepon": "escrima sticks", #weapon of choice
         "throwable": "wing-dings",
     },
+    "moves": ["punching", "kicking", "and sticks"],
     "skills_list": ["acrobatics", "stealth", "escapology", "hacking"],
     "skills" : "Nightwing's skills include acrobatics, stealth, escapology, hacking and more",
     "facts": {
@@ -24,7 +25,8 @@ robin2 = {
         "main_waepon": "pistols", #weapon of choice
         "throwable": "grenades ",
     },
-    "skills_lists": ["espionage", "disguise", "strategist", "weapon mastery"],
+    "moves": ["punching", "kicking", "and shooting"],
+    "skills_list": ["espionage", "disguise", "strategist", "weapon mastery"],
     "skills": "Red Hood's skills include espionage, disguise, strategist, weapon mastery and more",
     "facts": {
         0: "After bathing in the Lazarus, Jason's body has enhanced strength, stamina and durability",
@@ -41,6 +43,7 @@ robin3 = {
         "main_waepon": "tonfas", #weapon of choice
         "throwable": "bat-a-rangs",
     },
+    "moves": ["punching", "kicking", "and sticks"],
     "skills_list": ["hacking", "acrobatics", "photographic memory", "informations expert"],
     "skills": "Batgirl's skills include hacking, acrobatics, a photographic memory, and is a informations expert",
     "facts": {
@@ -58,6 +61,7 @@ robin4 = {
         "main_waepon": "bo-staff", #weapon of choice
         "throwable": "bat-a-rangs ",
     },
+    "moves": ["punching", "kicking", "and sticks"],
     "skills_list": ["espionage", "detective skills", "genius intellect", "hacking"],
     "skills": "Robin's skills include espionage, detective skills, genius intellect, and hacking",
     "facts": {
@@ -77,8 +81,42 @@ def what_can(robin):
     return robin["skills"]
     #print(robin["hero_name"]) for testing
 
+def move_set(robin):
+    moves = robin["moves"]
+    x = ', '.join(moves)
+    return x
+
 def tell_fact(robin):
     x = len(robin["facts"]) #amount of facts on hero
     y = random.randint(0, x)
     return robin["facts"][y]
     #print(robin["facts"][y]) for testing
+
+def gotham_knights(robin, command):
+    if robin.lower() == 'grayson':
+        if command.lower() == 'combat':
+            return move_set(robin1)
+        elif command.lower() == 'skills':
+            return what_can(robin1)
+    elif robin.lower() == 'jason':
+        if command.lower() == 'combat':
+            return move_set(robin2)
+        elif command.lower() == 'skills':
+            return what_can(robin2)
+    elif robin.lower() == 'barbara':
+        if command.lower() == 'combat':
+            return move_set(robin3)
+        elif command.lower() == 'skills':
+            return what_can(robin3)
+    elif robin.lower() == 'tim':
+        if command.lower() == 'combat':
+            return move_set(robin4)
+        elif command.lower() == 'skills':
+            return what_can(robin4)
+
+x = 'grayson moves'
+y = x.split(" ")
+name, command = y[0], y[1]
+
+#gotham_knights(name, command)
+#move_set(robin1)

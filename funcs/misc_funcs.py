@@ -1,8 +1,10 @@
-from urllib import response
+#from urllib import response
+import random
+import re
 import requests
 import urllib.parse
 import pandas as pd
-from requests_html import HTML
+#from requests_html import HTML
 from requests_html import HTMLSession
 import datetime
 from funcs.utils import tell_date
@@ -107,6 +109,7 @@ def google_search(query):
 
 
 def mama_joke():
+  # API DOCs = https://github.com/beanboi7/yomomma-apiv2 
   response = requests.get("https://yomomma-api.herokuapp.com/jokes")
   joke = response.json()
   return joke["joke"]
@@ -116,7 +119,8 @@ def tell_joke():
   joke = response.json()
   return joke
 
-def next_mcu_title(): # https://www.whenisthenextmcufilm.com/api?date=2022-03-01
+def next_mcu_title(): 
+  #API DOCS https://www.whenisthenextmcufilm.com/api?date=2022-03-01
   url_date_date = datetime.date.today().strftime("%Y:%m:%d")
   url_date = url_date_date.replace(":", "-")
   url = "https://www.whenisthenextmcufilm.com/api?date=" + url_date
@@ -143,3 +147,8 @@ def tell_riddle():
 
 def give_advice():
   pass
+
+def coin_flip():
+  coin = ['Heads', 'Tails']
+  res = coin[random.randint(0, 1)]
+  return res

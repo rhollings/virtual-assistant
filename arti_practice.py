@@ -1,3 +1,4 @@
+from more_itertools import take
 import speech_recognition as sr 
 import pyttsx3 
 import datetime
@@ -151,6 +152,11 @@ if __name__=='__main__':
             webbrowser.open_new_tab(image)
             speak(text)
 
+        elif 'flip a coin' in statement:
+            speak('flipping a coin')
+            to_say = coin_flip()
+            speak(to_say)
+
         elif 'question' in statement:
             speak('I can answer computational and geographical questions, what question do you want to ask?')
             question=takeCommand()
@@ -163,57 +169,28 @@ if __name__=='__main__':
 
         elif 'gotham knight' in statement:
             speak('Loading Gotham Knights video game logic, who do you need?')
-            hero = takeCommand().lower()
-            if 'no thanks' in hero:
-                continue
-            elif 'nightwing' in hero or 'grayson' in hero:
-                speak('Hero chosen is Nightwing')
-                help = takeCommand().lower()
-                if 'something' in help:
-                    fact = tell_fact(robin1)
-                    speak(fact)
-                elif 'information' in help:
-                    x = takeCommand().lower()
-                    info = all_info(robin1, x)
-                    speak(info)
-                elif 'never mind':
-                    continue
-            elif 'red hood' in hero or 'jason' in hero:
-                speak('Hero chosen is Red Hood')
-                help = takeCommand().lower()
-                if 'something' in help:
-                    fact = tell_fact(robin2)
-                    speak(fact)
-                elif 'information' in help:
-                    x = takeCommand().lower()
-                    info = all_info(robin2, x)
-                    speak(info)
-                elif 'never mind':
-                    continue
-            elif 'batgirl' in hero or 'barbara' in hero:
-                speak('Hero chosen is Batgirl')
-                help = takeCommand().lower()
-                if 'something' in help:
-                    fact = tell_fact(robin3)
-                    speak(fact)
-                elif 'information' in help:
-                    x = takeCommand().lower()
-                    info = all_info(robin3, x)
-                    speak(info)
-                elif 'never mind':
-                    continue
-            elif 'robin' in hero or 'tim' in hero:
-                speak('Hero chosen is Robin')
-                help = takeCommand().lower()
-                if 'something' in help:
-                    fact = tell_fact(robin4)
-                    speak(fact)
-                elif 'information' in help:
-                    x = takeCommand().lower()
-                    info = all_info(robin4, x)
-                    speak(info)
-                elif 'never mind':
-                    continue
+            while True:
+                new_statement = takeCommand().lower()
+                if "stop" in new_statement or "thanks" in new_statement:
+                    break
+                elif 'test' in new_statement:
+                    speak('Here to help')
+                elif 'grayson' in new_statement:
+                    hero = new_statement.split(" ")
+                    results = gotham_knights(hero[0], hero[1])
+                    speak(results)
+                elif 'jason' in new_statement:
+                    hero = new_statement.split(" ")
+                    results = gotham_knights(hero[0], hero[1])
+                    speak(results)
+                elif 'barbara' in new_statement:
+                    hero = new_statement.split(" ")
+                    results = gotham_knights(hero[0], hero[1])
+                    speak(results)
+                elif 'tim' in new_statement:
+                    hero = new_statement.split(" ")
+                    results = gotham_knights(hero[0], hero[1])
+                    speak(results)
 
         elif 'recommend' in statement and 'anime' in statement:
             speak(affirm)
