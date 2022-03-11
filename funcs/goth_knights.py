@@ -93,25 +93,25 @@ def tell_fact(robin):
     #print(robin["facts"][y]) for testing
 
 def gotham_knights(robin, command):
-    if robin.lower() == 'grayson':
-        if command.lower() == 'combat':
+    if robin == 'grayson':
+        if command == 'combat':
             return move_set(robin1)
-        elif command.lower() == 'skills':
+        elif command == 'skills':
             return what_can(robin1)
-    elif robin.lower() == 'jason':
-        if command.lower() == 'combat':
+    elif robin == 'jason':
+        if command == 'combat':
             return move_set(robin2)
-        elif command.lower() == 'skills':
+        elif command == 'skills':
             return what_can(robin2)
-    elif robin.lower() == 'barbara':
-        if command.lower() == 'combat':
+    elif robin == 'barbara':
+        if command == 'combat':
             return move_set(robin3)
-        elif command.lower() == 'skills':
+        elif command == 'skills':
             return what_can(robin3)
-    elif robin.lower() == 'tim':
-        if command.lower() == 'combat':
+    elif robin == 'tim':
+        if command == 'combat':
             return move_set(robin4)
-        elif command.lower() == 'skills':
+        elif command == 'skills':
             return what_can(robin4)
 
 x = 'grayson moves'
