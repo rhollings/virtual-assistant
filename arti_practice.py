@@ -173,8 +173,6 @@ if __name__=='__main__':
                 new_statement = takeCommand().lower()
                 if "stop" in new_statement or "thanks" in new_statement:
                     break
-                elif 'test' in new_statement:
-                    speak('Here to help')
                 elif 'grayson' in new_statement:
                     hero = new_statement.split(" ")
                     results = gotham_knights(hero[0], hero[1])
