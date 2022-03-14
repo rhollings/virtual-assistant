@@ -7,7 +7,7 @@ import pandas as pd
 #from requests_html import HTML
 from requests_html import HTMLSession
 import datetime
-from funcs.utils import tell_date
+#from funcs.utils import tell_date
 
 def get_source(url):
   """Return the source code for the provided URL. 
@@ -119,6 +119,19 @@ def tell_joke():
   joke = response.json()
   return joke
 
+def dark_joke():
+  url = 'https://v2.jokeapi.dev/joke/Dark?blacklistFlags=nsfw'
+  response = requests.get(url)
+  res = response.json()
+  part1, part2 = res['setup'], res['delivery']
+  x = []
+  joke = (part1, part2)
+  setup, line = joke[0], joke[1]
+  x.append(setup)
+  x.append(line)
+  return x
+  
+
 def next_mcu_title(): 
   #API DOCS https://www.whenisthenextmcufilm.com/api?date=2022-03-01
   url_date_date = datetime.date.today().strftime("%Y:%m:%d")
@@ -131,7 +144,7 @@ def next_mcu_title():
   release_date = result["release_date"]
   title = result["title"]
   film_show = result["type"]
-  date_x = tell_date(release_date)
+  date_x = ''#tell_date(release_date)
   x = 'The next MCU ' + film_show + ', will be ' + title + ' and is set to release on the ' + date_x
   res = [x, movie_poster]
   return res

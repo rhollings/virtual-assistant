@@ -140,9 +140,16 @@ if __name__=='__main__':
                 to_speak = to_speak[0]['info']
             speak(to_speak)
 
-        elif 'mum joke' in statement: 
+        elif 'mama joke' in statement: 
             joke = mama_joke()
             speak(joke)
+
+        elif 'dark joke' in statement:
+            joke = dark_joke()
+            x, y = joke[0], joke[1]
+            speak(x)
+            time.sleep(2)
+            speak(y)
 
         elif 'next' in statement and 'marvel' in statement:
             speak(affirm)

@@ -70,6 +70,8 @@ robin4 = {
     }
 }
 
+# What to add when game releases??
+
 import random
 
 
