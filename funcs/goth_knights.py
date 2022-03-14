@@ -100,6 +100,8 @@ def gotham_knights(robin, command):
             return move_set(robin1)
         elif command == 'skills':
             return what_can(robin1)
+        elif command == 'fact':
+            return tell_fact(robin1)
     elif robin == 'jason':
         if command == 'combat':
             return move_set(robin2)

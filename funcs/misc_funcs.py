@@ -120,7 +120,7 @@ def tell_joke():
   return joke
 
 def dark_joke():
-  url = 'https://v2.jokeapi.dev/joke/Dark?blacklistFlags=nsfw'
+  url = 'https://v2.jokeapi.dev/joke/Dark?blacklistFlags=nsfw' #https://sv443.net/jokeapi/v2/
   response = requests.get(url)
   res = response.json()
   part1, part2 = res['setup'], res['delivery']
