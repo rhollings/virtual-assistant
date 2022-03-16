@@ -123,6 +123,12 @@ if __name__=='__main__':
             speak('Here is the latest news')
             time.sleep(6)
 
+        elif 'chat' in statement:
+            # imlement while loop to have conversation
+            speak(affirm)
+            x = 'some_chat_function'
+            speak(x)
+
         elif 'search'  in statement:
             statement = statement.replace("search", "")
             webbrowser.open_new_tab(statement)
@@ -261,6 +267,7 @@ if __name__=='__main__':
                       str(temp_max) +
                       "\n description = " +
                       str(weather_description))
+
         elif "log off" in statement or "sign out" in statement:
             speak("Ok , your pc will log off in 10 sec make sure you exit from all applications")
             #subprocess.call(["shutdown", "/l"])
