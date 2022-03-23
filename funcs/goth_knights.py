@@ -12,7 +12,8 @@ robin1 = {
     "skills" : "Nightwing's skills include acrobatics, stealth, escapology, hacking and more",
     "facts": {
         0: "Nightwing is known to be the greatest acrobat in his universe",
-        1: "Grayson is Bruce's first robin, the original boy wonder"
+        1: "Grayson is Bruce's first robin, the original boy wonder",
+        2: "Nightwing is currently the richest memeber of the family"
     }
 }
 
