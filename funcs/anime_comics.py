@@ -1,4 +1,5 @@
 #function to record, print, update comics/manga currently reading
+from re import X
 import sqlite3
 
 conn = sqlite3.connect('ai_database.db')
@@ -29,23 +30,44 @@ many_comics = [
 #print(c.fetchall())
 
 #functions that update the tables
-def add_read(book, chapter, character, company):
-    c.execute("SELECT * FROM comic")
-    print(book, chapter, character, company)
+def add_read(type_of, book, chapter, character, company):
+    x = 'Book is already in database'
+    y = 'Adding', book, 'to db'
+    if type_of == 'comic':
+        print('comics')
+        c.execute("SELECT * FROM comics WHERE book=:name", {"name": book})
+    else:
+        print('manga') 
+        c.execute("SELECT * FROM manga WHERE book=:name", {"name": book})
+    
 
-add_read('Book', 'Chapter', 'Character', 'Company')
+    books = c.fetchall()
+    if len(books) == 0:
+        new_comic = (book, chapter, character, company, 'no')
+        print(y)
+        #c.executemany("INSERT INTO comics VALUES (?,?,?,?,?)", new_comic)
+        print(new_comic)
 
-def update_current_read(book, chapter, finished):
-    pass
+    else:
+        print(x)    
+#add_read('comic', 'Batman', 'Chapter', 'Character', 'Company')
+
+
+def update_current_read(type_of, book, chapter, finished):
+    if type_of == 'comic':
+        print('comic')
+    else:
+        print('manga')
+
 
 def print_current_reads():
+    #select both tables, return all titles 
     pass
+
+
 
 
 # COMMITS COMMAND
 conn.commit()
-
 # CLOSE CONNECTION
 conn.close()
-
-print('Script ran succesfully')
