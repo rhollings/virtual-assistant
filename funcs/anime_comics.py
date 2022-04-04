@@ -22,6 +22,14 @@ many_comics = [
     ('Justice League', 'chapter', 'Justice League', 'DC Comics', 'no')
 ]
 
+many_manga = [
+    ('My Hero Academia', '342', 'Character', 'Studio', 'no'),
+    ('God of Highschool', 'chapter', 'Character', 'Studio', 'no'),
+    ('Jujutsu Kaisen', '153', 'Character', 'Studio', 'no'),
+    ('Fire Force', '0', 'Character', 'Studio', 'no')
+    ('Tokyo Revengers', '224', 'Character', 'Studio', 'no')
+]
+
 #c.executemany("INSERT INTO comics VALUES (?,?,?,?,?)", many_comics)
 
 #c.execute("INSERT INTO comics VALUES ('book', 'chapter', 'character', 'company', 'yes or no') ")
