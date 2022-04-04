@@ -30,6 +30,8 @@ many_manga = [
     ('Tokyo Revengers', '224', 'Character', 'Studio', 'no')
 ]
 
+#NEED TO UPDATE
+
 #c.executemany("INSERT INTO comics VALUES (?,?,?,?,?)", many_comics)
 
 #c.execute("INSERT INTO comics VALUES ('book', 'chapter', 'character', 'company', 'yes or no') ")
