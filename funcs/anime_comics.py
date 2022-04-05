@@ -26,20 +26,21 @@ many_manga = [
     ('My Hero Academia', '342', 'Character', 'Studio', 'no'),
     ('God of Highschool', 'chapter', 'Character', 'Studio', 'no'),
     ('Jujutsu Kaisen', '153', 'Character', 'Studio', 'no'),
-    ('Fire Force', '0', 'Character', 'Studio', 'no')
+    ('Fire Force', '0', 'Character', 'Studio', 'no'),
     ('Tokyo Revengers', '224', 'Character', 'Studio', 'no')
 ]
 
-#NEED TO UPDATE
-
-#c.executemany("INSERT INTO comics VALUES (?,?,?,?,?)", many_comics)
+#c.executemany("INSERT INTO manga VALUES (?,?,?,?,?)", many_manga)
 
 #c.execute("INSERT INTO comics VALUES ('book', 'chapter', 'character', 'company', 'yes or no') ")
+
+#c.execute("DELETE FROM comics WHERE company='Studio'")
 
 #c.execute("SELECT * FROM comics")
 #print(c.fetchall())
 
 #functions that update the tables
+# Hey Arti, I'm reading _____ now. - 'Adding to list'
 def add_read(type_of, book, chapter, character, company):
     x = 'Book is already in database'
     y = 'Adding', book, 'to db'
@@ -59,22 +60,28 @@ def add_read(type_of, book, chapter, character, company):
         print(new_comic)
 
     else:
-        print(x)    
+        print(x)
+  
 #add_read('comic', 'Batman', 'Chapter', 'Character', 'Company')
 
-
+# Hey Arti, I'm on chpt __ for _____. - 'updating...'
+# how to set finished default to 'no'
 def update_current_read(type_of, book, chapter, finished):
     if type_of == 'comic':
         print('comic')
     else:
         print('manga')
 
-
+# Show me all reads
 def print_current_reads():
-    #select both tables, return all titles 
-    pass
+    comics = c.execute("SELECT * FROM comics")
+    all_comics = comics.fetchall()
+    manga = c.execute("SELECT * FROM manga")
+    all_manga = manga.fetchall()
+    print(all_comics)
+    print(all_manga)
 
-
+#print_current_reads()
 
 
 # COMMITS COMMAND
