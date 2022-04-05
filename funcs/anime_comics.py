@@ -30,6 +30,8 @@ many_manga = [
     ('Tokyo Revengers', '224', 'Character', 'Studio', 'no')
 ]
 
+#c.execute("UPDATE comics SET chapter=:chapter WHERE book=:book", {"chapter": chapter, "book": book})
+
 #c.executemany("INSERT INTO manga VALUES (?,?,?,?,?)", many_manga)
 
 #c.execute("INSERT INTO comics VALUES ('book', 'chapter', 'character', 'company', 'yes or no') ")
@@ -66,13 +68,23 @@ def add_read(type_of, book, chapter, character, company):
 
 # Hey Arti, I'm on chpt __ for _____. - 'updating...'
 # how to set finished default to 'no'
-def update_current_read(type_of, book, chapter, finished):
+def update_current_read(type_of, book, chapter):
     if type_of == 'comic':
+        c.execute("UPDATE comics SET chapter=:chapter WHERE book=:book", {"chapter": chapter, "book": book})
         print('comic')
-    else:
+    elif type_of == 'manga':
+        c.execute("UPDATE manga SET chapter=:chapter WHERE book=:book", {"chapter": chapter, "book": book})
         print('manga')
+    else:
+        print('Something went wrong')
+
+
+
+def finised_book(type_of, book, finished):
+    pass
 
 # Show me all reads
+# Show unfinished/finished reads
 def print_current_reads():
     comics = c.execute("SELECT * FROM comics")
     all_comics = comics.fetchall()
