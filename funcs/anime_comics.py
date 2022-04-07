@@ -5,23 +5,21 @@ import sqlite3
 conn = sqlite3.connect('ai_database.db')
 c = conn.cursor()
 
-#make the tables
 '''
-c.execute("""CREATE TABLE manga ( 
-        book text,
-        chapter text,
-        character text,
-        company text,
-        finished text
-    )""")
+TABLE COLUMNS
+book text,
+chapter text,
+character text,
+company text,
+finished text
 '''
+# to input many
 many_comics = [
     ('Nightwing', 'chapter', 'Nightwing', 'DC Comics', 'no'),
     ("World's Finest", 'chapter', 'Batman and Superman', 'DC Comics', 'no'),
     ('Fear State', 'chapter', 'Batman', 'DC Comics', 'no'),
     ('Justice League', 'chapter', 'Justice League', 'DC Comics', 'no')
 ]
-
 many_manga = [
     ('My Hero Academia', '342', 'Character', 'Studio', 'no'),
     ('God of Highschool', 'chapter', 'Character', 'Studio', 'no'),
@@ -81,6 +79,12 @@ def update_current_read(type_of, book, chapter):
 
 
 def finised_book(type_of, book, finished):
+    if type_of == 'comic':
+        print('comic command')
+    elif type_of == 'manga':
+        print('manga command')
+    else:
+        print('Type Not Found')
     pass
 
 # Show me all reads
