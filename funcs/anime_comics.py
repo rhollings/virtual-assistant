@@ -32,7 +32,7 @@ many_manga = [
 
 #c.executemany("INSERT INTO manga VALUES (?,?,?,?,?)", many_manga)
 
-#c.execute("INSERT INTO comics VALUES ('book', 'chapter', 'character', 'company', 'yes or no') ")
+#c.execute("INSERT INTO manga VALUES ('Chainsaw Man', 'chapter', 'Denji', 'company', 'no') ")
 
 #c.execute("DELETE FROM comics WHERE company='Studio'")
 
@@ -76,16 +76,19 @@ def update_current_read(type_of, book, chapter):
     else:
         print('Something went wrong')
 
-
+#update_current_read('comic', "World's Finest", '1')
 
 def finised_book(type_of, book, finished):
     if type_of == 'comic':
-        print('comic command')
+        c.execute("UPDATE comics SET finihsed=:finished WHERE book=:book", {"finished": finished, "book": book})
+        print('comic command updating')
     elif type_of == 'manga':
-        print('manga command')
+        c.execute("UPDATE manga SET finished=:finished WHERE book=:book", {"finished": finished, "book": book})
+        print('manga command updating')
     else:
         print('Type Not Found')
     pass
+#finised_book('manga', 'Chainsaw Man', 'yes')
 
 # Show me all reads
 # Show unfinished/finished reads
