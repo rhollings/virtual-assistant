@@ -202,6 +202,14 @@ if __name__=='__main__':
                     results = gotham_knights(hero[0], hero[1])
                     speak(results)
 
+        elif 'open' in statement and 'reading' in statement:
+            speak('Inside comic/anime database')
+            while True:
+                new_statement = takeCommand().lower()
+                if "stop" in new_statement or "thanks" in new_statement:
+                    break
+                # 'give read' 'say read' 'return reads' ??
+
         elif 'recommend' in statement and 'anime' in statement:
             speak(affirm)
             anime = have_you_watched()
