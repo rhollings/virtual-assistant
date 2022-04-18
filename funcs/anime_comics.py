@@ -30,6 +30,8 @@ many_manga = [
 
 #c.execute("UPDATE comics SET chapter=:chapter WHERE book=:book", {"chapter": chapter, "book": book})
 
+#c.execute("UPDATE manga SET character='Takemitchy' WHERE book='Tokyo Revengers'")
+
 #c.executemany("INSERT INTO manga VALUES (?,?,?,?,?)", many_manga)
 
 #c.execute("INSERT INTO manga VALUES ('Chainsaw Man', 'chapter', 'Denji', 'company', 'no') ")
@@ -76,7 +78,7 @@ def update_current_read(type_of, book, chapter):
     else:
         print('Something went wrong')
 
-#update_current_read('comic', "World's Finest", '1')
+#update_current_read('manga', "Jujutsu Kaisen", '161')
 
 def finised_book(type_of, book, finished):
     if type_of == 'comic':
@@ -100,7 +102,7 @@ def print_current_reads():
     print(all_comics)
     print(all_manga)
 
-#print_current_reads()
+print_current_reads()
 
 
 # COMMITS COMMAND
