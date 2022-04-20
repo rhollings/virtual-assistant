@@ -1,5 +1,4 @@
 #function to record, print, update comics/manga currently reading
-from re import X
 import sqlite3
 
 conn = sqlite3.connect('ai_database.db')
@@ -94,15 +93,31 @@ def finised_book(type_of, book, finished):
 
 # Show me all reads
 # Show unfinished/finished reads
-def print_current_reads():
-    comics = c.execute("SELECT * FROM comics")
+def print_current_reads(type_of):
+    comics = c.execute("SELECT book FROM comics")
     all_comics = comics.fetchall()
-    manga = c.execute("SELECT * FROM manga")
+    manga = c.execute("SELECT book FROM manga")
     all_manga = manga.fetchall()
-    print(all_comics)
-    print(all_manga)
+    reads = []
+    if type_of == 'comic':
+        for i in all_comics:
+            reads.append(i[0])
+        #print(reads)
+        return reads
+    elif type_of == 'manga':
+        for j in all_manga:
+            reads.append(j[0])
+        #print(reads)
+        return reads
+    else:
+        for j in all_manga:
+            reads.append(j[0])
+        for i in all_comics:
+            reads.append(i[0])
+        #print(reads)
+        return reads
 
-print_current_reads()
+print_current_reads('')
 
 
 # COMMITS COMMAND

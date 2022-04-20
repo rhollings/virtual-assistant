@@ -5,11 +5,12 @@ import wikipedia
 import webbrowser 
 import os
 import time
-import subprocess
+#import subprocess
 #from ecapture import ecapture as ec 
 import wolframalpha 
-import json
+#import json
 import requests
+from funcs.anime_comics import print_current_reads
 from funcs.anime_funcs import have_you_watched
 from funcs.goth_knights import *
 from funcs.misc_funcs import *
@@ -208,6 +209,19 @@ if __name__=='__main__':
                 new_statement = takeCommand().lower()
                 if "stop" in new_statement or "thanks" in new_statement:
                     break
+                elif "what am i reading" in new_statement:
+                    speak('comics or manga?')
+                    while True:
+                        thrd_statement = takeCommand().lower()
+                        if 'comic' in thrd_statement:
+                            i = print_current_reads('comic')
+                            break
+                        elif 'manga' in thrd_statement:
+                            i = print_current_reads('manga')
+                            break
+                        else:
+                            i = print_current_reads('')
+                            break
                 # 'give read' 'say read' 'return reads' ??
 
         elif 'recommend' in statement and 'anime' in statement:
