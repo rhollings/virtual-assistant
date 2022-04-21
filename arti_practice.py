@@ -15,7 +15,7 @@ from funcs.anime_funcs import have_you_watched
 from funcs.goth_knights import *
 from funcs.misc_funcs import *
 from funcs.movies import *
-from funcs.utils import affirm_speak, closing_speak, repeat_speak
+from funcs.utils import *
 from dotenv import load_dotenv
 
 
@@ -214,13 +214,22 @@ if __name__=='__main__':
                     while True:
                         thrd_statement = takeCommand().lower()
                         if 'comic' in thrd_statement:
-                            i = print_current_reads('comic')
+                            arr = print_current_reads('comic')
+                            for i in arr:   
+                                speak(i)
                             break
                         elif 'manga' in thrd_statement:
-                            i = print_current_reads('manga')
+                            arr = print_current_reads('manga')
+                            for i in arr:   
+                                speak(i)
+                            break
+                        elif 'both' in thrd_statement:
+                            arr = print_current_reads('')
+                            for i in arr:   
+                                speak(i)
                             break
                         else:
-                            i = print_current_reads('')
+                            speak('Exiting, Try again')
                             break
                 # 'give read' 'say read' 'return reads' ??
 

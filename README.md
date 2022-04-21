@@ -1,4 +1,4 @@
-# Arti v1.0
+# Arti v1.1.1
 
 "Hello World!"
 This is repo is my attempt at making a virtual assistant. 'Arti' short for artificial inteligence, is inspired by marvel's 'Jarvis'. 

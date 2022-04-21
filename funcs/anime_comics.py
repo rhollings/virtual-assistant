@@ -117,10 +117,10 @@ def print_current_reads(type_of):
         #print(reads)
         return reads
 
-print_current_reads('')
+#print_current_reads('')
 
 
 # COMMITS COMMAND
 conn.commit()
 # CLOSE CONNECTION
-conn.close()
+#conn.close()

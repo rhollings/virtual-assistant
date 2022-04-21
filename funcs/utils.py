@@ -1,5 +1,6 @@
 import random
-from timeit import repeat
+import datetime
+import requests
 
 opening_text = [
     "I'm on it",
@@ -114,3 +115,24 @@ def tell_date(date_given):
     return res
 
 #tell_date("2022-03-02")
+
+# Func easier to call from this file
+def next_mcu_title(): 
+  #API DOCS https://www.whenisthenextmcufilm.com/api?date=2022-03-01
+  url_date_date = datetime.date.today().strftime("%Y:%m:%d")
+  url_date = url_date_date.replace(":", "-")
+  url = "https://www.whenisthenextmcufilm.com/api?date=" + url_date
+  response = requests.get(url)
+  result = response.json()
+  x, res = '', []
+  movie_poster = result["poster_url"]
+  release_date = result["release_date"]
+  title = result["title"]
+  film_show = result["type"]
+  date_x = tell_date(release_date)
+  x = 'The next MCU ' + film_show + ', will be ' + title + ' and is set to release on the ' + date_x
+  res = [x, movie_poster]
+  return res
+  #print(type(date))
+  #print(res)
+

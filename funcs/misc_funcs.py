@@ -7,7 +7,7 @@ import pandas as pd
 #from requests_html import HTML
 from requests_html import HTMLSession
 import datetime
-#from funcs.utils import tell_date
+
 
 def get_source(url):
   """Return the source code for the provided URL. 
@@ -130,27 +130,6 @@ def dark_joke():
   x.append(setup)
   x.append(line)
   return x
-  
-
-def next_mcu_title(): 
-  #API DOCS https://www.whenisthenextmcufilm.com/api?date=2022-03-01
-  url_date_date = datetime.date.today().strftime("%Y:%m:%d")
-  url_date = url_date_date.replace(":", "-")
-  url = "https://www.whenisthenextmcufilm.com/api?date=" + url_date
-  response = requests.get(url)
-  result = response.json()
-  x, res = '', []
-  movie_poster = result["poster_url"]
-  release_date = result["release_date"]
-  title = result["title"]
-  film_show = result["type"]
-  date_x = ''#tell_date(release_date)
-  x = 'The next MCU ' + film_show + ', will be ' + title + ' and is set to release on the ' + date_x
-  res = [x, movie_poster]
-  return res
-  #print(type(date))
-  #print(res)
-
 
 def tell_peom():
   pass
