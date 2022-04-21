@@ -2,16 +2,18 @@ import pyttsx3
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[10].id)
+engine.setProperty('voice', voices[7].id)
 rate = engine.getProperty('rate')
-engine.setProperty('rate', rate-50)
+engine.setProperty('rate', rate-40)
 #engine.say("I will speak this text hello bye bye this that")
 
-engine.say("2022")
+engine.say("Fetching database, one moment")
 #print("Bonjour, Je m'appelle Arti")
 
 #pyttsx3 does not speak other languages
 
+# num7 male good
+# num 10 good female
 
 engine.runAndWait()
 '''

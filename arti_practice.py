@@ -26,8 +26,8 @@ WOLFRAMALPHA_KEY = os.getenv('WOLFRAMALPHA_KEY')
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 rate = engine.getProperty('rate')
-engine.setProperty('rate', rate-55)
-engine.setProperty('voice', voices[10].id) 
+engine.setProperty('rate', rate-40)
+engine.setProperty('voice', voices[7].id) 
 
 def speak(text):
     engine.say(text)
@@ -36,16 +36,16 @@ def speak(text):
 def wishMe():
     curr_hour = datetime.datetime.now().hour
     if curr_hour >= 5 and curr_hour < 12:
-        speak("Good Morning User")
+        speak("Good Morning")
         print("Good Morning")
     elif curr_hour >= 12 and curr_hour < 18:
-        speak("Good Afternoon User")
+        speak("Good Afternoon")
         print("Good Afternoon")
     elif curr_hour >= 18 and curr_hour < 23:
-        speak("Good Evening User")
+        speak("Good Evening")
         print("Good Evening")
     else:
-        speak("It is late User")
+        speak("It is late")
         print("It is late")
 
 to_repeat = repeat_speak()
