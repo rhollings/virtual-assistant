@@ -125,7 +125,7 @@ if __name__=='__main__':
             time.sleep(6)
 
         elif 'chat' in statement:
-            # imlement while loop to have conversation
+            # implement while loop to have conversation
             speak(affirm)
             x = 'some_chat_function'
             speak(x)
@@ -209,6 +209,9 @@ if __name__=='__main__':
                 new_statement = takeCommand().lower()
                 if "stop" in new_statement or "thanks" in new_statement:
                     break
+                elif "update" in new_statement:
+                    speak('what book would you like to update?')
+                    # can pyttsx3 understand my broken japanese for the book titles??
                 elif "what am i reading" in new_statement:
                     speak('comics or manga?')
                     while True:
