@@ -75,6 +75,9 @@ robin4 = {
 
 # What to add when game releases??
 
+# Game will have status weapon effects. such as cryo. 
+# A current misson tracker??
+
 import random
 
 
