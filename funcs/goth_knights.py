@@ -21,7 +21,7 @@ robin1 = {
 
 robin2 = {
     "fullname": "Jason Peter Todd",
-    "name": "Jason",
+    "name": "Jason Todd",
     "short_name": "Jason",
     "hero_name": "Red Hood",
     "tools": {
@@ -39,7 +39,7 @@ robin2 = {
 
 robin3 = {
     "fullname": "Barbara Joan Gordon",
-    "name": "Barbara",
+    "name": "Barbara Gordon",
     "short_name": "Babs",
     "hero_name": "Batgirl",
     "tools": {
@@ -73,10 +73,13 @@ robin4 = {
     }
 }
 
-# What to add when game releases??
 
-# Game will have status weapon effects. such as cryo. 
 # A current misson tracker??
+
+# STATS include Power/Health/Armor/Melee+crit/Range+crit
+# what are critical chances and damage? 
+
+# What all characters can do vs individually  
 
 import random
 
@@ -124,9 +127,12 @@ def gotham_knights(robin, command):
         elif command == 'skills':
             return what_can(robin4)
 
-x = 'grayson moves'
-y = x.split(" ")
-name, command = y[0], y[1]
-
-#gotham_knights(name, command)
-#move_set(robin1)
+to_choose = (robin1, robin2, robin3, robin4)
+def random_hints(): # needs work?
+    x = random.randint(0,4)
+    y = to_choose[x]
+    print(y['name'])
+    values = y.values()
+    print(values)
+    
+    

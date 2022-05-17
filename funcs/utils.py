@@ -16,12 +16,12 @@ opening_text = [
 ]
 
 closing_text = [
-    "See you later boss",
+    "See you later",
     "Taking a break",
     "I'm here if you need me",
     "Wake me if you need me",
     "Staying close by",
-    "Later boss",
+    "Later",
     "Later",
 ]
 
