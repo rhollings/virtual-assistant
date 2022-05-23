@@ -14,10 +14,9 @@ finished text
 '''
 # to input many
 many_comics = [
-    ('Nightwing', 'chapter', 'Nightwing', 'DC Comics', 'no'),
-    ("World's Finest", 'chapter', 'Batman and Superman', 'DC Comics', 'no'),
-    ('Fear State', 'chapter', 'Batman', 'DC Comics', 'no'),
-    ('Justice League', 'chapter', 'Justice League', 'DC Comics', 'no')
+    ('Batman', '29', 'Batman', 'DC Comics', 'no'),
+    ("Detective Comics", '1016', 'Batman', 'DC Comics', 'no'),
+    ('The Titans', '30', 'Titans', 'DC Comics', 'no'),
 ]
 many_manga = [
     ('My Hero Academia', '342', 'Character', 'Studio', 'no'),
@@ -27,20 +26,22 @@ many_manga = [
     ('Tokyo Revengers', '224', 'Character', 'Studio', 'no')
 ]
 
-#c.execute("UPDATE comics SET chapter=:chapter WHERE book=:book", {"chapter": chapter, "book": book})
 
-#c.execute("UPDATE manga SET character='Takemitchy' WHERE book='Tokyo Revengers'")
+# c.execute("UPDATE comics SET chapter=:chapter WHERE book=:book", {"chapter": chapter, "book": book})
 
-#c.executemany("INSERT INTO manga VALUES (?,?,?,?,?)", many_manga)
+# c.execute("UPDATE manga SET character='Takemitchy' WHERE book='Tokyo Revengers'")
 
-#c.execute("INSERT INTO manga VALUES ('Chainsaw Man', 'chapter', 'Denji', 'company', 'no') ")
+# c.executemany("INSERT INTO comics VALUES (?,?,?,?,?)", many_comics)
 
-#c.execute("DELETE FROM comics WHERE company='Studio'")
+# c.execute("INSERT INTO manga VALUES ('Chainsaw Man', 'chapter', 'Denji', 'company', 'no') ")
 
-#c.execute("SELECT * FROM comics")
-#print(c.fetchall())
+# c.execute("DELETE FROM comics WHERE company='Studio'")
 
-#functions that update the tables
+# c.execute("SELECT book FROM manga WHERE finished='no'")
+# print(c.fetchall())
+
+
+# ADD NEW BOOK
 # Hey Arti, I'm reading _____ now. - 'Adding to list'
 def add_read(type_of, book, chapter, character, company):
     x = 'Book is already in database'
@@ -65,8 +66,12 @@ def add_read(type_of, book, chapter, character, company):
   
 #add_read('comic', 'Batman', 'Chapter', 'Character', 'Company')
 
+
+'''
+# UPDATE CURRENT CHAPTERS
 # Hey Arti, I'm on chpt __ for _____. - 'updating...'
 # how to set finished default to 'no'
+'''
 def update_current_read(type_of, book, chapter):
     if type_of == 'comic':
         c.execute("UPDATE comics SET chapter=:chapter WHERE book=:book", {"chapter": chapter, "book": book})
@@ -79,6 +84,8 @@ def update_current_read(type_of, book, chapter):
 
 #update_current_read('manga', "Jujutsu Kaisen", '161')
 
+
+# BOOK IS READ TO COMPLETION
 def finised_book(type_of, book, finished):
     if type_of == 'comic':
         c.execute("UPDATE comics SET finihsed=:finished WHERE book=:book", {"finished": finished, "book": book})
@@ -91,12 +98,14 @@ def finised_book(type_of, book, finished):
     pass
 #finised_book('manga', 'Chainsaw Man', 'yes')
 
-# Show me all reads
+
+
+# RETURNS ALL READS
 # Show unfinished/finished reads
 def print_current_reads(type_of):
-    comics = c.execute("SELECT book FROM comics")
+    comics = c.execute("SELECT book FROM comics WHERE finished='no'")
     all_comics = comics.fetchall()
-    manga = c.execute("SELECT book FROM manga")
+    manga = c.execute("SELECT book FROM manga WHERE finished='no'")
     all_manga = manga.fetchall()
     reads = []
     if type_of == 'comic':
@@ -117,10 +126,10 @@ def print_current_reads(type_of):
         #print(reads)
         return reads
 
-#print_current_reads('')
+#print(print_current_reads(''))
 
 
 # COMMITS COMMAND
 conn.commit()
 # CLOSE CONNECTION
-#conn.close()
+conn.close()
