@@ -53,18 +53,32 @@ def add_read(type_of, book, chapter, character, company):
         print('manga') 
         c.execute("SELECT * FROM manga WHERE book=:name", {"name": book})
     
-
     books = c.fetchall()
     if len(books) == 0:
         new_comic = (book, chapter, character, company, 'no')
         print(y)
+        # *** IMPORTANT ***
         #c.executemany("INSERT INTO comics VALUES (?,?,?,?,?)", new_comic)
         print(new_comic)
 
     else:
         print(x)
   
-#add_read('comic', 'Batman', 'Chapter', 'Character', 'Company')
+# NEW ADD READ
+# MORE LIKE QUESTIONAIRE FOR EAISER INPUT
+# USES OLD 'ADD' FUNCTIONS
+def add_new_read():
+    typeof = input('comic or manga? : ')
+    book_title = input('name of book : ')
+    curr_chap = input('current chapter? : ')
+    mc = input('name of main character? : ')
+    studio = input('who produces said book? : ')
+    print(typeof, book_title, curr_chap, mc, studio)
+    dub_check = input('is everything correct? ')
+    if dub_check == 'y' or dub_check == 'yes':
+        add_read(typeof, book_title, curr_chap, mc, studio)
+    else:
+        print('Try again')
 
 
 '''
@@ -126,7 +140,7 @@ def print_current_reads(type_of):
         #print(reads)
         return reads
 
-#print(print_current_reads(''))
+print(print_current_reads(''))
 
 
 # COMMITS COMMAND
