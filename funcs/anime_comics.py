@@ -108,7 +108,7 @@ def finised_book(type_of, book, finished):
         c.execute("UPDATE manga SET finished=:finished WHERE book=:book", {"finished": finished, "book": book})
         print('manga command updating')
     else:
-        print('Type Not Found')
+        print('Type Does Not Exist')
     pass
 #finised_book('manga', 'Chainsaw Man', 'yes')
 
