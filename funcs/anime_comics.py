@@ -140,7 +140,7 @@ def print_current_reads(type_of):
         #print(reads)
         return reads
 
-print(print_current_reads(''))
+#print(print_current_reads(''))
 
 
 # COMMITS COMMAND
