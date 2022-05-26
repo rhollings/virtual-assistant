@@ -211,7 +211,6 @@ if __name__=='__main__':
                     break
                 elif "update" in new_statement:
                     speak('what book would you like to update?')
-                    # can pyttsx3 understand my broken japanese for the book titles??
                 elif "what am i reading" in new_statement:
                     speak('comics or manga?')
                     while True:
