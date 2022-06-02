@@ -38,6 +38,10 @@ OpenWeather API = https://home.openweathermap.org/
 Public API's = https://github.com/public-apis/public-apis 
 
 
+<h3>Helpful Places to Start</h3> 
+
+<a href="https://www.youtube.com/results?search_query=coding+a+personal+assistant+" target="_blank">Youtube</a>
+
 <!--
 Other Docs
 
