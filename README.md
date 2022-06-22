@@ -20,7 +20,7 @@ personalized local db that tracks favorite shows, books etc.
 'subprocess' -> commands for the computer   
 
 'speech_recognition' -> speech to text  
-'pyttsx3' -> text to speech 
+<a href="https://pypi.org/project/pyttsx3/" target="_blank">'pyttsx3'</a> -> text to speech 
 'wikipedia' -> for wiki searches    
 'wolframalpha' -> for geo questions  
 'requests' -> for HTTP requests     
