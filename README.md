@@ -14,7 +14,7 @@ personalized local db that tracks favorite shows, books etc.
 
 <h3>In House Libraries & Imports</h3>
 
-'datetime' -> displays date and time    
+<a href="https://docs.python.org/3/library/datetime.html#" target="_blank">'datetime'</a> -> displays date and time    
 'os' -> to interact with operating system   
 'webbrowser' -> to open internet/extract data   
 'subprocess' -> commands for the computer   
@@ -22,7 +22,6 @@ personalized local db that tracks favorite shows, books etc.
 'speech_recognition' -> speech to text  
 'pyttsx3' -> text to speech 
 'wikipedia' -> for wiki searches    
-'time' -> helps datetime    
 'wolframalpha' -> for geo questions  
 'requests' -> for HTTP requests     
 'ecapture' -> for taking photos     

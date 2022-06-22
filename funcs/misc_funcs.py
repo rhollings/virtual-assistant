@@ -1,12 +1,11 @@
-#from urllib import response
+#from urllib import response // currently not using
 import random
 import re
 import requests
 import urllib.parse
 import pandas as pd
-#from requests_html import HTML
+#from requests_html import HTML // currently not using
 from requests_html import HTMLSession
-import datetime
 
 
 def get_source(url):

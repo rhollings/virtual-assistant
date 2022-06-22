@@ -1,10 +1,11 @@
+# IMPORTS 
 import speech_recognition as sr 
 import pyttsx3 
 import datetime
+#import time // can replace time w/ datetime.time
 import wikipedia
 import webbrowser 
 import os
-import time
 #import subprocess
 #from ecapture import ecapture as ec 
 import wolframalpha 
@@ -102,17 +103,17 @@ if __name__=='__main__':
             speak(affirm)
             webbrowser.open_new_tab("https://www.youtube.com")
             speak("youtube is open now")
-            time.sleep(5)
+            datetime.time.sleep(5)
 
         elif 'open google' in statement:
             webbrowser.open_new_tab("https://www.google.com")
             speak("Google chrome is open now")
-            time.sleep(5)
+            datetime.time.sleep(5)
 
         elif 'open gmail' in statement:
             webbrowser.open_new_tab("gmail.com")
             speak("Google Mail open now")
-            time.sleep(5)
+            datetime.time.sleep(5)
 
         elif 'time' in statement:
             strTime=datetime.datetime.now().strftime("%I:%M:%p")
@@ -122,7 +123,7 @@ if __name__=='__main__':
             speak(affirm)
             news = webbrowser.open_new_tab("https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en")
             speak('Here is the latest news')
-            time.sleep(6)
+            datetime.time.sleep(6)
 
         elif 'chat' in statement:
             # implement while loop to have conversation
@@ -133,7 +134,7 @@ if __name__=='__main__':
         elif 'search'  in statement:
             statement = statement.replace("search", "")
             webbrowser.open_new_tab(statement)
-            time.sleep(5)
+            datetime.time.sleep(5)
 
         elif 'look up' in statement:
             speak(affirm)
@@ -154,7 +155,7 @@ if __name__=='__main__':
             joke = dark_joke()
             x, y = joke[0], joke[1]
             speak(x)
-            time.sleep(2)
+            datetime.time.sleep(2)
             speak(y)
 
         elif 'next' in statement and 'marvel' in statement:
@@ -305,4 +306,4 @@ if __name__=='__main__':
             speak("Ok , your pc will log off in 10 sec make sure you exit from all applications")
             #subprocess.call(["shutdown", "/l"])
 			
-time.sleep(3)
+datetime.time.sleep(3)
