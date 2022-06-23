@@ -171,8 +171,8 @@ if __name__=='__main__':
             to_say = coin_flip()
             speak(to_say)
 
-        elif 'question' in statement:
-            speak('I can answer computational and geographical questions, what question do you want to ask?')
+        elif 'question' in statement: # reconfig
+            speak('what question do you want to ask?')
             question=takeCommand()
             app_id = WOLFRAMALPHA_KEY
             client = wolframalpha.Client(app_id) #USE OWN APP ID

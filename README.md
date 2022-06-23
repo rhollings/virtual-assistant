@@ -1,4 +1,4 @@
-# Arti v1.1.2
+# Arti v1.1.3
 
 "Hello World!"
 This is repo is my attempt at making a virtual assistant. 'Arti' short for artificial inteligence, is inspired by marvel's 'Jarvis'. 
@@ -22,7 +22,7 @@ personalized local db that tracks favorite shows, books etc.
 'speech_recognition' -> speech to text  
 <a href="https://pypi.org/project/pyttsx3/" target="_blank">'pyttsx3'</a> -> text to speech 
 'wikipedia' -> for wiki searches    
-'wolframalpha' -> for geo questions  
+'wolframalpha' -> for intelligent responses  
 'requests' -> for HTTP requests     
 'ecapture' -> for taking photos     
 'json' -> for reading json data   

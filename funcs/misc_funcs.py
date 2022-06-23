@@ -102,7 +102,7 @@ def google_search(query):
   return parse_results(response)
 
 
-#results = google_search('where is paris')
+#results = google_search('where is paris located')
 #print(results)
 #print(type(results))
 
