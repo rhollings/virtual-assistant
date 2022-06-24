@@ -203,6 +203,9 @@ if __name__=='__main__':
                     hero = new_statement.split(" ")
                     results = gotham_knights(hero[0], hero[1])
                     speak(results)
+                elif 'come out' in new_statement or 'release' in new_statement:
+                    results = countdown_to_release()
+                    speak(results)
 
         elif 'open' in statement and 'reading' in statement:
             speak('Inside comic/anime database')

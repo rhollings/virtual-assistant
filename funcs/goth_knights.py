@@ -1,4 +1,4 @@
-# Game releases in October 
+# Game releases: October 25 2022
 
 robin1 = {
     "fullname": "Richard John Grayson",
@@ -82,6 +82,7 @@ robin4 = {
 # What all characters can do vs individually  
 
 import random
+import datetime
 
 
 def all_info(robin, res):
@@ -136,3 +137,9 @@ def random_hints(): # needs work?
     print(values)
     
     
+def countdown_to_release():
+    release_date = datetime.date(2022, 10, 25)
+    today = datetime.date.today()
+    return release_date - today
+
+print(countdown_to_release())
