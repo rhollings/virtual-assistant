@@ -2,7 +2,7 @@
 import speech_recognition as sr 
 import pyttsx3 
 import datetime
-#import time // can replace time w/ datetime.time
+import time
 import wikipedia
 import webbrowser 
 import os
@@ -103,17 +103,17 @@ if __name__=='__main__':
             speak(affirm)
             webbrowser.open_new_tab("https://www.youtube.com")
             speak("youtube is open now")
-            datetime.time.sleep(5)
+            time.sleep(5)
 
         elif 'open google' in statement:
             webbrowser.open_new_tab("https://www.google.com")
             speak("Google chrome is open now")
-            datetime.time.sleep(5)
+            time.sleep(5)
 
         elif 'open gmail' in statement:
             webbrowser.open_new_tab("gmail.com")
             speak("Google Mail open now")
-            datetime.time.sleep(5)
+            time.sleep(5)
 
         elif 'time' in statement:
             strTime=datetime.datetime.now().strftime("%I:%M:%p")
@@ -123,7 +123,7 @@ if __name__=='__main__':
             speak(affirm)
             news = webbrowser.open_new_tab("https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en")
             speak('Here is the latest news')
-            datetime.time.sleep(6)
+            time.sleep(6)
 
         elif 'chat' in statement:
             # implement while loop to have conversation
@@ -134,11 +134,12 @@ if __name__=='__main__':
         elif 'search'  in statement:
             statement = statement.replace("search", "")
             webbrowser.open_new_tab(statement)
-            datetime.time.sleep(5)
+            time.sleep(5)
 
         elif 'look up' in statement:
             speak(affirm)
             statement = statement.replace("look up", "")
+            webbrowser.open_new_tab(statement)
             results = google_search(statement)
             to_speak = results[0]
             if to_speak == []:
@@ -146,6 +147,7 @@ if __name__=='__main__':
             else:
                 to_speak = to_speak[0]['info']
             speak(to_speak)
+            time.sleep(5)
 
         elif 'mama joke' in statement: 
             joke = mama_joke()
@@ -155,7 +157,7 @@ if __name__=='__main__':
             joke = dark_joke()
             x, y = joke[0], joke[1]
             speak(x)
-            datetime.time.sleep(2)
+            time.sleep(2)
             speak(y)
 
         elif 'next' in statement and 'marvel' in statement:
@@ -165,11 +167,13 @@ if __name__=='__main__':
             image = res[1]
             webbrowser.open_new_tab(image)
             speak(text)
+            time.sleep(5)
 
         elif 'flip a coin' in statement:
             speak('flipping a coin')
             to_say = coin_flip()
             speak(to_say)
+            time.sleep(5)
 
         elif 'question' in statement: # reconfig
             speak('what question do you want to ask?')
@@ -180,6 +184,7 @@ if __name__=='__main__':
             answer = next(res.results).text
             speak(answer)
             print(answer)
+            time.sleep(5)
 
         elif 'gotham knight' in statement:
             speak('Loading Gotham Knights video game logic, who do you need?')
@@ -206,6 +211,7 @@ if __name__=='__main__':
                 elif 'come out' in new_statement or 'release' in new_statement:
                     results = countdown_to_release()
                     speak(results)
+            time.sleep(5)
 
         elif 'open' in statement and 'reading' in statement:
             speak('Inside comic/anime database')
@@ -238,40 +244,47 @@ if __name__=='__main__':
                             speak('Exiting, Try again')
                             break
                 # 'give read' 'say read' 'return reads' ??
+            time.sleep(5)
 
         elif 'recommend' in statement and 'anime' in statement:
             speak(affirm)
             anime = have_you_watched()
             speak("Have you seen " + anime + " ?")
             print(anime)
+            time.sleep(5)
         
         elif 'fact' in statement and 'anime' in statement:
             speak(affirm)
             anime = tell_fact()
             speak("Did you know that: " + anime)
             print("Did you know that: " + anime)
+            time.sleep(5)
 
 
         elif 'who are you' in statement or 'what can you do' in statement:
             speak('I am Arti, version 1 point O, a virtual assistant. I am programmed to do minor tasks like '
                   'searching the web, tell time, weather in different cities, recommend an anime, tell jokes, ' 
                   'get news and answer computational or geographical questions too!')
+            time.sleep(5)
 
 
         elif "who made you" in statement or "who created you" in statement or "who discovered you" in statement:
             speak("I was created by Rod")
-            print("I was created by Rod")
+            time.sleep(5)
 
         elif "rod" in statement or "pj" in statement:
             speak("PJ is a genuis, the man you speak of is my creator.")
+            time.sleep(5)
 
         elif 'cecile' in statement or 'boo boo' in statement:
             speak('meanie pants, i mean, she is a beautiful french lady married to rod')
+            time.sleep(5)
 
         elif 'movies' in statement:
             speak(affirm)
             x = get_trending_movies()
             speak(x)
+            time.sleep(5)
         
         elif "weather" in statement:
             api_key = WEATHER_KEY 
@@ -304,6 +317,7 @@ if __name__=='__main__':
                       str(temp_max) +
                       "\n description = " +
                       str(weather_description))
+            time.sleep(5)
 
         elif "log off" in statement or "sign out" in statement:
             speak("Ok , your pc will log off in 10 sec make sure you exit from all applications")
