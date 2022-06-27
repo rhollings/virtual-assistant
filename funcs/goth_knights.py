@@ -142,4 +142,3 @@ def countdown_to_release():
     today = datetime.date.today()
     return release_date - today
 
-print(countdown_to_release())
