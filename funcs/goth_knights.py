@@ -15,7 +15,9 @@ robin1 = {
     "facts": {
         0: "Nightwing is known to be the greatest acrobat in his universe",
         1: "Grayson is Bruce's first robin, the original boy wonder",
-        2: "Nightwing is currently the richest memeber of the family"
+        2: "Grayson inherited billions from Alfred's untimely passing",
+        3: "Grayson spent nights undercover in Arkham Asylum disguised as Joker",
+        4: "Talon, also known as William Cobb is Grayson great grandfather"
     }
 }
 
@@ -33,7 +35,8 @@ robin2 = {
     "skills": "Red Hood's skills include espionage, disguise, strategist, weapon mastery and more",
     "facts": {
         0: "After bathing in the Lazarus, Jason's body has enhanced strength, stamina and durability",
-        1: "Bruce once found Jason stealing the tires from the batmobile"
+        1: "Bruce once found Jason stealing the tires from the batmobile",
+        2: "As a teen, Jason would dress up as a member of the Red Hood Gang to rob stores for money"
     }
 }
 
@@ -69,7 +72,8 @@ robin4 = {
     "skills": "Robin's skills include espionage, detective skills, genius intellect, and hacking",
     "facts": {
         0: "Tim's detective skills rivals that of Batman himself",
-        1: "Tim is the third male robin, after Dick and Jason"
+        1: "Tim is the third male robin, after Dick and Jason",
+        2: "Tim scored 100 percent on the SAT while still in middle school"
     }
 }
 
