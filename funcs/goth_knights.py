@@ -54,7 +54,8 @@ robin3 = {
     "skills": "Batgirl's skills include hacking, acrobatics, a photographic memory, and is a informations expert",
     "facts": {
         0: "Batgirl has control over Luthor's advanced satelites without his knowledge",
-        1: "Barbara's father is James Gordon, the Commissioner"
+        1: "Barbara's father is James Gordon, the former Commissioner",
+        2: ""
     }
 }
 
