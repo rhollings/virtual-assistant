@@ -141,11 +141,14 @@ def gotham_knights(robin, command):
 
 to_choose = (robin1, robin2, robin3, robin4)
 def random_hints(): # needs work?
-    x = random.randint(0,4)
+    x = random.randint(0,3)
     y = to_choose[x]
     print(y['name'])
-    values = y.values()
-    print(values)
+    facts = y['facts']
+    rand = random.randint(0, len(facts)-1)
+    print(facts[rand])
+
+random_hints()
     
     
 def countdown_to_release():
