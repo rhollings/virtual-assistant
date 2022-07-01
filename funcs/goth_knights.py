@@ -122,16 +122,22 @@ def gotham_knights(robin, command):
             return move_set(robin2)
         elif command == 'skills':
             return what_can(robin2)
+        elif command == 'fact':
+            return tell_fact(robin2)
     elif robin == 'barbara':
         if command == 'combat':
             return move_set(robin3)
         elif command == 'skills':
             return what_can(robin3)
+        elif command == 'fact':
+            return tell_fact(robin3)
     elif robin == 'tim':
         if command == 'combat':
             return move_set(robin4)
         elif command == 'skills':
             return what_can(robin4)
+        elif command == 'fact':
+            return tell_fact(robin4)
 
 to_choose = (robin1, robin2, robin3, robin4)
 def random_hints(): # needs work?

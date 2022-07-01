@@ -8,7 +8,7 @@ import webbrowser
 import os
 #import subprocess
 #from ecapture import ecapture as ec 
-import wolframalpha 
+from funcs.wolfram import * 
 #import json
 import requests
 from funcs.anime_comics import print_current_reads
@@ -178,10 +178,7 @@ if __name__=='__main__':
         elif 'question' in statement: # reconfig
             speak('what question do you want to ask?')
             question=takeCommand()
-            app_id = WOLFRAMALPHA_KEY
-            client = wolframalpha.Client(app_id) #USE OWN APP ID
-            res = client.query(question)
-            answer = next(res.results).text
+            answer = to_respond(question)
             speak(answer)
             print(answer)
             time.sleep(5)
