@@ -20,7 +20,7 @@ from funcs.utils import *
 from dotenv import load_dotenv
 
 
-load_dotenv()
+load_dotenv() # is this needed here?
 WEATHER_KEY = os.getenv('WEATHER_KEY')
 WOLFRAMALPHA_KEY = os.getenv('WOLFRAMALPHA_KEY')
 
@@ -323,4 +323,4 @@ if __name__=='__main__':
             speak("Ok , your pc will log off in 10 sec make sure you exit from all applications")
             #subprocess.call(["shutdown", "/l"])
 			
-datetime.time.sleep(3)
+time.sleep(3)

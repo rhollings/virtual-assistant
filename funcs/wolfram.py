@@ -20,4 +20,3 @@ def to_respond(question):
     
     return data['plaintext']
 
-print(to_respond('what is pi'))
