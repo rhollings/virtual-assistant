@@ -208,6 +208,9 @@ if __name__=='__main__':
                 elif 'come out' in new_statement or 'release' in new_statement:
                     results = countdown_to_release()
                     speak(results)
+                elif 'random' in new_statement or 'fact' in new_statement:
+                    results = random_facts()
+                    speak(results)
             time.sleep(5)
 
         elif 'open' in statement and 'reading' in statement:

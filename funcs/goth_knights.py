@@ -109,6 +109,16 @@ def tell_fact(robin):
     return robin["facts"][y]
     #print(robin["facts"][y]) for testing
 
+to_choose = (robin1, robin2, robin3, robin4)
+def random_facts(): # needs work?
+    x = random.randint(0,3)
+    y = to_choose[x]
+    print(y['name'])
+    facts = y['facts']
+    rand = random.randint(0, len(facts)-1)
+    #print(facts[rand])
+    return facts[rand]
+
 def gotham_knights(robin, command):
     if robin == 'grayson':
         if command == 'combat':
@@ -139,16 +149,6 @@ def gotham_knights(robin, command):
         elif command == 'fact':
             return tell_fact(robin4)
 
-to_choose = (robin1, robin2, robin3, robin4)
-def random_hints(): # needs work?
-    x = random.randint(0,3)
-    y = to_choose[x]
-    print(y['name'])
-    facts = y['facts']
-    rand = random.randint(0, len(facts)-1)
-    print(facts[rand])
-
-random_hints()
     
     
 def countdown_to_release():
