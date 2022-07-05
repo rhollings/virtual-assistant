@@ -156,3 +156,4 @@ def countdown_to_release():
     today = datetime.date.today()
     return release_date - today
 
+# midnights suns ???
