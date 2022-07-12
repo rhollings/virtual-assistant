@@ -1,5 +1,6 @@
 # Game releases: October 25 2022
 
+# Dick Grayson // Nightwing
 robin1 = {
     "fullname": "Richard John Grayson",
     "name": "Dick Grayson",
@@ -10,7 +11,7 @@ robin1 = {
         "throwable": "wing-dings",
     },
     "moves": ["punching", "kicking", "and sticks"],
-    "skills_list": ["acrobatics", "stealth", "escapology", "hacking"],
+    "skills_list": ["acrobatic maneuvering", "stealth", "escapology", "hacking"],
     "skills" : "Nightwing's skills include acrobatics, stealth, escapology, hacking and more",
     "facts": {
         0: "Nightwing is known to be the greatest acrobat in his universe",
@@ -21,6 +22,7 @@ robin1 = {
     }
 }
 
+# Jason Todd // Red Hood
 robin2 = {
     "fullname": "Jason Peter Todd",
     "name": "Jason Todd",
@@ -40,6 +42,7 @@ robin2 = {
     }
 }
 
+# Barbara Gordon // Batgirl
 robin3 = {
     "fullname": "Barbara Joan Gordon",
     "name": "Barbara Gordon",
@@ -59,6 +62,7 @@ robin3 = {
     }
 }
 
+# Tim Drake // Robin
 robin4 = {
     "fullname": "Timothy Jackson Drake",
     "name": "Tim Drake",
@@ -69,7 +73,7 @@ robin4 = {
         "throwable": "bat-a-rangs ",
     },
     "moves": ["punching", "kicking", "and sticks"],
-    "skills_list": ["espionage", "detective skills", "genius intellect", "hacking"],
+    "skills_list": ["stealth tech", "detective skills", "short range teleportation", "hacking"],
     "skills": "Robin's skills include espionage, detective skills, genius intellect, and hacking",
     "facts": {
         0: "Tim's detective skills rivals that of Batman himself",
@@ -155,5 +159,3 @@ def countdown_to_release():
     release_date = datetime.date(2022, 10, 25)
     today = datetime.date.today()
     return release_date - today
-
-# midnights suns ???
