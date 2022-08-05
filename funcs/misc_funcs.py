@@ -1,6 +1,7 @@
 #from urllib import response // currently not using
 import random
 import re
+from tkinter import E
 import requests
 import urllib.parse
 import pandas as pd
@@ -143,3 +144,10 @@ def coin_flip():
   coin = ['Heads', 'Tails']
   res = coin[random.randint(0, 1)]
   return res
+
+def choose_for_me(choices):
+  choices = choices.split()
+  choice = choices[random.randint(0, len(choices)-1)]
+  return choice
+
+# ff bureau buffet hippo 3brass

@@ -75,6 +75,9 @@ wishMe()
 affirm = affirm_speak()
 closing = closing_speak()
 
+# how to control wait ?? dont want ai talking every 5 secs
+# if theres no input
+
 if __name__=='__main__':
 
     while True:
@@ -174,6 +177,12 @@ if __name__=='__main__':
             to_say = coin_flip()
             speak(to_say)
             time.sleep(5)
+
+        elif 'choose' in statement:
+            speak('what are your options')
+            options = takeCommand()
+            to_say = choose_for_me(options)
+            speak(to_say)
 
         elif 'question' in statement: # reconfig
             speak('what question do you want to ask?')
