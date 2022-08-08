@@ -150,4 +150,5 @@ def choose_for_me(choices):
   choice = choices[random.randint(0, len(choices)-1)]
   return choice
 
-# ff bureau buffet hippo 3brass
+# double words split w/ split -- split by word 'or' ??
+# if 'or' is added, must filter out 
