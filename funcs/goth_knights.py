@@ -15,10 +15,10 @@ robin1 = {
     "skills" : "Nightwing's skills include acrobatics, stealth, escapology, hacking and more",
     "facts": {
         0: "Nightwing is known to be the greatest acrobat in his universe",
-        1: "Grayson is Bruce's first robin, the original boy wonder",
+        1: "Grayson is Bruce's first robin, the original boy wonder since April 1940",
         2: "Grayson inherited billions from Alfred's untimely passing",
         3: "Grayson spent nights undercover in Arkham Asylum disguised as Joker",
-        4: "Talon, also known as William Cobb is Grayson great grandfather"
+        4: "Talon, also known as William Cobb is Grayson's great grandfather"
     }
 }
 
@@ -58,7 +58,7 @@ robin3 = {
     "facts": {
         0: "Batgirl has control over Luthor's advanced satelites without his knowledge",
         1: "Barbara's father is James Gordon, the former Commissioner",
-        2: ""
+        2: "Barbara is the first of 3 batgirls"
     }
 }
 
@@ -115,13 +115,12 @@ def tell_fact(robin):
 
 to_choose = (robin1, robin2, robin3, robin4)
 def random_facts(): # needs work?
-    x = random.randint(0,3)
-    y = to_choose[x]
-    print(y['name'])
-    facts = y['facts']
-    rand = random.randint(0, len(facts)-1)
-    #print(facts[rand])
-    return facts[rand]
+    x = random.choice(to_choose)
+    print(x['name'])
+    facts = x['facts']
+    rand1 = random.choice(facts)
+    #print(rand1)
+    return rand1
 
 def gotham_knights(robin, command):
     if robin == 'grayson':

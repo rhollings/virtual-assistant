@@ -94,6 +94,9 @@ if __name__=='__main__':
         elif 'hi' in statement or 'hello' in statement or 'hey' in statement:
             speak('Hello, may I assist with something?')
 
+        # talk_to_me func - arti speaks thru assortment of items
+        # like reminders, news, etc.
+
         elif 'wikipedia' in statement:
             speak('Searching Wikipedia...')
             statement = statement.replace("wikipedia", "")
