@@ -15,7 +15,8 @@ def search_hero(name):
             return i
     return 'Not Found'
 
-print(search_hero('nightwing'))
+print(search_hero('batman'))
+# How to return multiple heroes of the same name ??
 
 # sentence = name aka real_name, race gender, side
 # Nightwing also known as Dick Grayson, Human Male, Hero

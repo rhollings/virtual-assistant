@@ -13,6 +13,7 @@ robin1 = {
     "moves": ["punching", "kicking", "and sticks"],
     "skills_list": ["acrobatic maneuvering", "stealth", "escapology", "hacking"],
     "skills" : "Nightwing's skills include acrobatics, stealth, escapology, hacking and more",
+    "specialty": "Nightwing is a team player offering buffs and boosts to teammates all while having best maneuverability",
     "facts": {
         0: "Nightwing is known to be the greatest acrobat in his universe",
         1: "Grayson is Bruce's first robin, the original boy wonder since April 1940",
@@ -35,6 +36,7 @@ robin2 = {
     "moves": ["punching", "kicking", "and shooting"],
     "skills_list": ["espionage", "disguise", "strategist", "weapon mastery"],
     "skills": "Red Hood's skills include espionage, disguise, strategist, weapon mastery and more",
+    "specialty": "Red Hood specializes in range and grabs",
     "facts": {
         0: "After bathing in the Lazarus, Jason's body has enhanced strength, stamina and durability",
         1: "Bruce once found Jason stealing the tires from the batmobile",
@@ -55,6 +57,7 @@ robin3 = {
     "moves": ["punching", "kicking", "and sticks"],
     "skills_list": ["hacking", "acrobatics", "photographic memory", "informations expert"],
     "skills": "Batgirl's skills include hacking, acrobatics, a photographic memory, and is a informations expert",
+    "specialty": "Batgirl specializes in close quarter combat",
     "facts": {
         0: "Batgirl has control over Luthor's advanced satelites without his knowledge",
         1: "Barbara's father is James Gordon, the former Commissioner",
@@ -75,6 +78,7 @@ robin4 = {
     "moves": ["punching", "kicking", "and sticks"],
     "skills_list": ["stealth tech", "detective skills", "short range teleportation", "hacking"],
     "skills": "Robin's skills include espionage, detective skills, genius intellect, and hacking",
+    "specialty": "Robin focuses on using gadets to disorientate enemies",
     "facts": {
         0: "Tim's detective skills rivals that of Batman himself",
         1: "Tim is the third male robin, after Dick and Jason",
@@ -100,6 +104,11 @@ def all_info(robin, res):
 def what_can(robin):
     robin["skills"] #need to list thru
     return robin["skills"]
+    #print(robin["hero_name"]) for testing
+
+def give_specialty(robin):
+    robin["specialty"] #need to list thru
+    return robin["specialty"]
     #print(robin["hero_name"]) for testing
 
 def move_set(robin):
@@ -128,6 +137,8 @@ def gotham_knights(robin, command):
             return move_set(robin1)
         elif command == 'skills':
             return what_can(robin1)
+        elif command == 'specialty':
+            return give_specialty(robin1)
         elif command == 'fact':
             return tell_fact(robin1)
     elif robin == 'jason':
@@ -135,6 +146,8 @@ def gotham_knights(robin, command):
             return move_set(robin2)
         elif command == 'skills':
             return what_can(robin2)
+        elif command == 'specialty':
+            return give_specialty(robin2)
         elif command == 'fact':
             return tell_fact(robin2)
     elif robin == 'barbara':
@@ -142,6 +155,8 @@ def gotham_knights(robin, command):
             return move_set(robin3)
         elif command == 'skills':
             return what_can(robin3)
+        elif command == 'specialty':
+            return give_specialty(robin3)
         elif command == 'fact':
             return tell_fact(robin3)
     elif robin == 'tim':
@@ -149,6 +164,8 @@ def gotham_knights(robin, command):
             return move_set(robin4)
         elif command == 'skills':
             return what_can(robin4)
+        elif command == 'specialty':
+            return give_specialty(robin4)
         elif command == 'fact':
             return tell_fact(robin4)
 
