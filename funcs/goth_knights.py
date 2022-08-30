@@ -115,6 +115,7 @@ def move_set(robin):
     moves = robin["moves"]
     x = ', '.join(moves)
     return x
+    #print(x)  for testings
 
 def tell_fact(robin):
     x = len(robin["facts"]) #amount of facts on hero
