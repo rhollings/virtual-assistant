@@ -175,4 +175,8 @@ def gotham_knights(robin, command):
 def countdown_to_release():
     release_date = datetime.date(2022, 10, 25)
     today = datetime.date.today()
-    return release_date - today
+    res = abs(release_date - today)
+    _str = 'The game releases in {} days'.format(res.days)
+    return _str
+
+print(countdown_to_release())
