@@ -178,5 +178,3 @@ def countdown_to_release():
     res = abs(release_date - today)
     _str = 'The game releases in {} days'.format(res.days)
     return _str
-
-print(countdown_to_release())

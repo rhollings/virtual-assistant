@@ -281,12 +281,12 @@ if __name__=='__main__':
 
 
         elif "who made you" in statement or "who created you" in statement or "who discovered you" in statement:
-            speak("I was created by Rod")
-            time.sleep(5)
+            speak("I was created by PJ")
+            time.sleep(3)
 
         elif "rod" in statement or "pj" in statement:
             speak("PJ is a genuis, the man you speak of is my creator.")
-            time.sleep(5)
+            time.sleep(3)
 
         elif 'cecile' in statement or 'boo boo' in statement:
             speak('meanie pants, i mean, she is a beautiful french lady married to rod')
