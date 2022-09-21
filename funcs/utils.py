@@ -26,9 +26,8 @@ closing_text = [
 ]
 
 repeat_mes = [
-    "Pardon",
     "Please repeat that",
-    "I did not quite catch that",
+    "I did not catch that",
     "I did not understand",
     "Can you please speak more clearly",
 ]

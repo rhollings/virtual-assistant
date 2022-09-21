@@ -63,7 +63,7 @@ def takeCommand():
 
         except Exception as e:
             #speak("Pardon, please say that again")
-            speak(to_repeat)
+            speak("Sorry ", to_repeat)
             return "None"
         return statement
 
