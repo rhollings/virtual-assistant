@@ -7,7 +7,7 @@ from utils import month_texts, day_texts
 # Test cases: '21st of June', 'March 3rd', 'November the 19th'
 # How to format different types of input ??
 def format_date(input_date):
-    print(input_date)
+    pass
 
 
 # Q: When is my birthday?
