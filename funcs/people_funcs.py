@@ -17,3 +17,4 @@ def return_birthday(date_given):
     res = abs(bd - today)
     _str = 'Your birthday is in {} days'.format(res.days)
     return _str
+

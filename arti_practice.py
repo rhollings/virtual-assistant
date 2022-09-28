@@ -195,6 +195,10 @@ if __name__=='__main__':
             print(answer)
             time.sleep(5)
 
+        # USE Wolfram API
+        elif 'something' in statement:
+            pass
+
         elif 'gotham knight' in statement:
             speak('Loading Gotham Knights video game logic, who do you need?')
             while True:
