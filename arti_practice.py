@@ -187,7 +187,7 @@ if __name__=='__main__':
             to_say = choose_for_me(options)
             speak(to_say)
 
-        elif 'question' in statement: # reconfig
+        elif 'google this' in statement: # reconfig
             speak('what question do you want to ask?')
             question=takeCommand()
             answer = to_respond(question)
@@ -196,7 +196,8 @@ if __name__=='__main__':
             time.sleep(5)
 
         # USE Wolfram API
-        elif 'something' in statement:
+        elif 'question' in statement:
+            speak('what question do you want to ask?')
             pass
 
         elif 'gotham knight' in statement:
