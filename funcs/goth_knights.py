@@ -78,7 +78,7 @@ robin4 = {
     "moves": ["punching", "kicking", "and sticks"],
     "skills_list": ["stealth tech", "detective skills", "short range teleportation", "hacking"],
     "skills": "Robin's skills include espionage, detective skills, genius intellect, and hacking",
-    "specialty": "Robin focuses on using gadets to disorientate enemies",
+    "specialty": "Robin focuses on using stealth and gadets to disorientate enemies",
     "facts": {
         0: "Tim's detective skills rivals that of Batman himself",
         1: "Tim is the third male robin, after Dick and Jason",
@@ -111,6 +111,7 @@ def give_specialty(robin):
     robin["specialty"] #need to list thru
     return robin["specialty"]
     #print(robin["hero_name"]) for testing
+print(give_specialty(robin1))
 
 def move_set(robin):
     moves = robin["moves"]
@@ -129,8 +130,7 @@ def random_facts(): # needs work?
     x = random.choice(to_choose)
     print(x['name'])
     facts = x['facts']
-    rand1 = random.choice(facts)
-    #print(rand1)
+    rand1 = random.choice(facts) #random.choice simplifies code
     return rand1
 
 def gotham_knights(robin, command):
