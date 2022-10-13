@@ -103,15 +103,30 @@ def all_info(robin, res):
     return robin[res]
 
 def what_can(robin):
-    robin["skills"] #need to list thru
+    robin["skills"]
     return robin["skills"]
     #print(robin["hero_name"]) for testing
 
+def skill_set(robin):
+    n_str = robin['hero_name'] + ' skills include '
+    skills = robin["skills_list"]
+    i = 0
+    while i < len(skills):
+        if i == 0:
+            n_str += skills[i] + ', ' 
+        elif i == len(skills)-2:
+            n_str += skills[i]
+        elif i == len(skills)-1:
+            n_str += ' and ' + skills[i]
+        else:
+            n_str += skills[i]  + ', ' 
+        i += 1
+    return n_str
+
 def give_specialty(robin):
-    robin["specialty"] #need to list thru
+    robin["specialty"]
     return robin["specialty"]
     #print(robin["hero_name"]) for testing
-print(give_specialty(robin1))
 
 def move_set(robin):
     moves = robin["moves"]
@@ -143,6 +158,8 @@ def gotham_knights(robin, command):
             return give_specialty(robin1)
         elif command == 'fact':
             return tell_fact(robin1)
+        elif command == 'abilities':
+            return skill_set(robin1)
     elif robin == 'jason':
         if command == 'combat':
             return move_set(robin2)
@@ -152,6 +169,8 @@ def gotham_knights(robin, command):
             return give_specialty(robin2)
         elif command == 'fact':
             return tell_fact(robin2)
+        elif command == 'abilities':
+            return skill_set(robin2)
     elif robin == 'barbara':
         if command == 'combat':
             return move_set(robin3)
@@ -161,6 +180,8 @@ def gotham_knights(robin, command):
             return give_specialty(robin3)
         elif command == 'fact':
             return tell_fact(robin3)
+        elif command == 'abilities':
+            return skill_set(robin3)
     elif robin == 'tim':
         if command == 'combat':
             return move_set(robin4)
@@ -170,6 +191,8 @@ def gotham_knights(robin, command):
             return give_specialty(robin4)
         elif command == 'fact':
             return tell_fact(robin4)
+        elif command == 'abilities':
+            return skill_set(robin4)
 
     
     
