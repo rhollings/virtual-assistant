@@ -94,7 +94,6 @@ robin4 = {
 
 # What all characters can do vs individually  
 
-from itertools import count
 import random
 import datetime
 
