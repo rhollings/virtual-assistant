@@ -94,8 +94,10 @@ robin4 = {
 
 # What all characters can do vs individually  
 
+from email.utils import localtime
 import random
-import datetime
+import datetime, time
+from sqlite3 import Timestamp
 
 
 def all_info(robin, res):
@@ -196,8 +198,8 @@ def gotham_knights(robin, command):
     
     
 def countdown_to_release():
-    release_date = datetime.date(2022, 10, 21)
-    today = datetime.date.today()
+    release_date = datetime.datetime(2022, 10, 20)
+    today = datetime.datetime.today()
     if release_date <= today:
         return "The game has already released. Go play!!"
     res = abs(release_date - today)

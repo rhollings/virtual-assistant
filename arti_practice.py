@@ -198,7 +198,10 @@ if __name__=='__main__':
         # USE Wolfram API
         elif 'question' in statement:
             speak('what question do you want to ask?')
-            pass
+            question = takeCommand()
+            answer = to_respond(question)
+            speak(answer)
+            time.sleep(5)
 
         elif 'gotham knight' in statement:
             speak('Loading Gotham Knights video game logic, who do you need?')
