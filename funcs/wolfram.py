@@ -20,4 +20,4 @@ def to_respond(question):
     
     return data['plaintext']
 
-# Ex. print(to_respond('who is the president of the united states'))
+# print(to_respond('who is the president of the united states'))

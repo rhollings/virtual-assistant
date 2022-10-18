@@ -13,6 +13,7 @@ opening_text = [
     "Understood",
     "Right away",
     "Will do",
+    "Ummm"
 ]
 
 closing_text = [
@@ -22,7 +23,7 @@ closing_text = [
     "Wake me if you need me",
     "Staying close by",
     "Later",
-    "Later",
+    "bye bye",
 ]
 
 repeat_mes = [
@@ -82,21 +83,16 @@ day_texts = {
 }
 
 def affirm_speak():
-    x = len(opening_text)
-    y = random.randint(0, x-1)
-    return opening_text[y]
-    #print(opening_text[y])
+    y = random.choice(opening_text)
+    return y
 
 def closing_speak():
-    x = len(closing_text)
-    y = random.randint(0, x-1)
-    return closing_text[y]
+    y = random.choice(closing_text)
+    return y
 
 def repeat_speak():
-    x = len(repeat_mes)
-    y = random.randint(0, x-1)
-    return repeat_mes[y]
-
+    y = random.choice(repeat_mes)
+    return y
 
 # A better way to tell days
 
@@ -132,6 +128,5 @@ def next_mcu_title():
   x = 'The next MCU ' + film_show + ', will be ' + title + ' and is set to release on the ' + date_x
   res = [x, movie_poster]
   return res
-  #print(type(date))
-  #print(res)
+
 
