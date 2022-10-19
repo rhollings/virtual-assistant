@@ -11,10 +11,12 @@ def format_date(input_date):
 
 
 # Q: When is my birthday?
-def return_birthday(date_given):
-    bd = date_given
+# DateTime Format 2022-10-18 23:45:03.366769 
+def return_birthday(month, day, year):
+    bd = datetime.date(year, month, day)
     today = datetime.date.today()
     res = abs(bd - today)
     _str = 'Your birthday is in {} days'.format(res.days)
     return _str
 
+#print(return_birthday(12, 10, 2022))

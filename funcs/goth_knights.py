@@ -203,5 +203,9 @@ def countdown_to_release():
     if release_date <= today:
         return "The game has already released. Go play!!"
     res = abs(release_date - today)
-    _str = 'The game releases in {} days'.format(res.days)
+    if res.days == 0: 
+        _str = "The game releases tomorrow XD"
+    else:
+        _str = 'The game releases in {} days'.format(res.days)
     return _str
+
