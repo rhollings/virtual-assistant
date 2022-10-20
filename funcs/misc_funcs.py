@@ -1,4 +1,5 @@
 #from urllib import response // currently not using
+from asyncio import run_coroutine_threadsafe
 import random
 import re
 from tkinter import E
@@ -100,7 +101,10 @@ def parse_results(response):
 
 def google_search(query):
   response = get_results(query)
-  return parse_results(response)
+  if parse_results(response) == None:
+    return "Nothing found, try another way"
+  else:
+    return parse_results(response)
 
 
 #results = google_search('where is paris located')

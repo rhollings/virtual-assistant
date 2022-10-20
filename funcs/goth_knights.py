@@ -1,4 +1,4 @@
-# Game releases: October 25 2022
+# Game releases: October 21 2022
 
 # Dick Grayson // Nightwing
 robin1 = {
@@ -94,10 +94,8 @@ robin4 = {
 
 # What all characters can do vs individually  
 
-from email.utils import localtime
 import random
 import datetime, time
-from sqlite3 import Timestamp
 
 
 def all_info(robin, res):
@@ -208,4 +206,3 @@ def countdown_to_release():
     else:
         _str = 'The game releases in {} days'.format(res.days)
     return _str
-
