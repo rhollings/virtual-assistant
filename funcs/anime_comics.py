@@ -13,6 +13,7 @@ company text,
 finished text
 '''
 # to input many
+'''
 many_comics = [
     ('Batman', '29', 'Batman', 'DC Comics', 'no'),
     ("Detective Comics", '1016', 'Batman', 'DC Comics', 'no'),
@@ -25,7 +26,7 @@ many_manga = [
     ('Fire Force', '0', 'Character', 'Studio', 'no'),
     ('Tokyo Revengers', '224', 'Character', 'Studio', 'no')
 ]
-
+'''
 
 # c.execute("UPDATE comics SET chapter=:chapter WHERE book=:book", {"chapter": chapter, "book": book})
 
