@@ -301,6 +301,10 @@ if __name__=='__main__':
             speak('meanie pants, i mean, she is a beautiful french lady married to rod')
             time.sleep(5)
 
+        elif 'introduction' in statement or 'introduce' in statement:
+            speak('Hello, I am an A.I. created by Rod. I do not yet have a name.')
+            time.sleep(5)
+
         elif 'movies' in statement:
             speak(affirm)
             x = get_trending_movies()
