@@ -149,6 +149,10 @@ def coin_flip():
   res = coin[random.randint(0, 1)]
   return res
 
+# roll dice option <-- 
+def roll_dice():
+  pass
+
 def choose_for_me(choices):
   choices = choices.split()
   choice = choices[random.randint(0, len(choices)-1)]
