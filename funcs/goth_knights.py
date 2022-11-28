@@ -1,6 +1,7 @@
 # Game releases: October 21 2022
 
 # Dick Grayson // Nightwing
+# Heals and buffs
 robin1 = {
     "fullname": "Richard John Grayson",
     "name": "Dick Grayson",
@@ -24,6 +25,7 @@ robin1 = {
 }
 
 # Jason Todd // Red Hood
+# Range and Grabs
 robin2 = {
     "fullname": "Jason Peter Todd",
     "name": "Jason Todd",
@@ -45,6 +47,7 @@ robin2 = {
 }
 
 # Barbara Gordon // Batgirl
+# Single target combat // beatdowns
 robin3 = {
     "fullname": "Barbara Joan Gordon",
     "name": "Barbara Gordon",
@@ -66,6 +69,7 @@ robin3 = {
 }
 
 # Tim Drake // Robin
+# tech and distractions 
 robin4 = {
     "fullname": "Timothy Jackson Drake",
     "name": "Tim Drake",
