@@ -135,7 +135,9 @@ def dark_joke():
   x.append(line)
   return x
 
-def tell_peom():
+# Need API's 
+def tell_peom(): 
+  # res = API output 
   pass
 
 def tell_riddle():
