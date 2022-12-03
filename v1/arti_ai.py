@@ -8,7 +8,8 @@ import webbrowser
 import os
 #import subprocess
 #from ecapture import ecapture as ec 
-from funcs.wolfram import * 
+import funcs
+#from funcs.wolfram import * 
 #import json
 import requests
 from funcs.anime_comics import print_current_reads
@@ -192,7 +193,7 @@ if __name__=='__main__':
         elif 'google this' in statement: # reconfig
             speak('what question do you want to ask?')
             question=takeCommand()
-            answer = to_respond(question)
+            answer = funcs.wolfram.to_respond(question)
             speak(answer)
             print(answer)
             time.sleep(5)
@@ -201,7 +202,7 @@ if __name__=='__main__':
         elif 'question' in statement:
             speak('what question do you want to ask?')
             question = takeCommand()
-            answer = to_respond(question)
+            answer = funcs.wolfram.to_respond(question)
             speak(answer)
             time.sleep(5)
 
