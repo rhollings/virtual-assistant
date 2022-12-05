@@ -19,6 +19,7 @@ from funcs.movies import *
 from funcs.utils import *
 from dotenv import load_dotenv
 
+# How to import modules ???
 
 load_dotenv() # is this needed here?
 WEATHER_KEY = os.getenv('WEATHER_KEY')
