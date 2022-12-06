@@ -21,7 +21,7 @@ from dotenv import load_dotenv
 
 # How to import modules ???
 
-load_dotenv() # is this needed here?
+load_dotenv() # initiates .env file
 WEATHER_KEY = os.getenv('WEATHER_KEY')
 WOLFRAMALPHA_KEY = os.getenv('WOLFRAMALPHA_KEY')
 

@@ -152,6 +152,7 @@ def coin_flip():
   return res
 
 # roll dice option <-- 
+# dice have six sides // 1 out of 6 chance per side
 def roll_dice():
   pass
 
