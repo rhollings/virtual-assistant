@@ -1,4 +1,5 @@
 # IMPORTS 
+import sys
 import speech_recognition as sr 
 import pyttsx3 
 import datetime
@@ -19,6 +20,9 @@ from funcs.misc_funcs import *
 from funcs.movies import *
 from funcs.utils import *
 from dotenv import load_dotenv
+
+sys.path.insert(0, '/Users/rod/Code/Python3/virtual-assistant/funcs')
+
 
 # How to import modules ???
 
