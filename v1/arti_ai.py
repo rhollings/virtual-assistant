@@ -1,5 +1,8 @@
 # IMPORTS 
 import sys
+sys.path.insert(0, '/Users/rod/Code/Python3/virtual-assistant/funcs')
+
+
 import speech_recognition as sr 
 import pyttsx3 
 import datetime
@@ -9,20 +12,16 @@ import webbrowser
 import os
 #import subprocess
 #from ecapture import ecapture as ec 
-import funcs
-#from funcs.wolfram import * 
+from wolfram import *
 #import json
 import requests
-from funcs.anime_comics import print_current_reads
-from funcs.anime_funcs import have_you_watched
-from funcs.goth_knights import *
-from funcs.misc_funcs import *
-from funcs.movies import *
-from funcs.utils import *
+from anime_comics import print_current_reads
+from anime_funcs import have_you_watched
+from goth_knights import *
+from misc_funcs import *
+from movies import *
+from utils import *
 from dotenv import load_dotenv
-
-sys.path.insert(0, '/Users/rod/Code/Python3/virtual-assistant/funcs')
-
 
 # How to import modules ???
 
