@@ -196,7 +196,7 @@ if __name__=='__main__':
         elif 'google this' in statement: # reconfig
             speak('what question do you want to ask?')
             question=takeCommand()
-            answer = funcs.wolfram.to_respond(question)
+            answer = to_respond(question)
             speak(answer)
             print(answer)
             time.sleep(5)
@@ -205,7 +205,7 @@ if __name__=='__main__':
         elif 'question' in statement:
             speak('what question do you want to ask?')
             question = takeCommand()
-            answer = funcs.wolfram.to_respond(question)
+            answer = to_respond(question)
             speak(answer)
             time.sleep(5)
 
