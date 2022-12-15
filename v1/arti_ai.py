@@ -81,8 +81,10 @@ wishMe()
 affirm = affirm_speak()
 closing = closing_speak()
 
-# how to control wait ?? dont want ai talking every 5 secs
-# if theres no input
+# wait for input ex. "Hey Bot"
+# convo tracking or reminders with SQL?? 
+
+
 
 if __name__=='__main__':
 
