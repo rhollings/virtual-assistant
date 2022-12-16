@@ -85,11 +85,12 @@ closing = closing_speak()
 # convo tracking or reminders with SQL?? 
 
 
-
+speak("How can I help you?")
 if __name__=='__main__':
 
     while True:
-        speak("How can I help you?")
+        #speak("How can I help you?")
+        print("Awaiting command...")
         statement = takeCommand().lower()
         if statement==0:
             continue
