@@ -16,12 +16,10 @@ def return_birthday(month, day, year):
     bd = datetime.date(year, month, day)
     today = datetime.date.today()
     res = bd - today
-    
+    res = str(res)
     _str = 'Your birthday is in {} days'.format(res.days)
     return _str
 
-#print(return_birthday(10, 5, 2022))
+print(return_birthday(10, 5, 2022))
 
-#current_date = datetime.datetime(10, 5, 2022)
-
-#print(int(current_date.strftime("%d")))
+# will have to create own countdown function :(
