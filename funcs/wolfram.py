@@ -20,4 +20,5 @@ def to_respond(question):
     
     return data['plaintext']
 
-# print(to_respond('who is the president of the united states'))
+#print(to_respond('who is the president of the united states'))
+#print(to_respond('what is pi to the tenth decimal'))

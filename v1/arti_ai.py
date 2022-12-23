@@ -206,7 +206,7 @@ if __name__=='__main__':
 
         # USE Wolfram API
         elif 'question' in statement:
-            speak('what question do you want to ask?')
+            speak('what is your question ?')
             question = takeCommand()
             answer = to_respond(question)
             speak(answer)

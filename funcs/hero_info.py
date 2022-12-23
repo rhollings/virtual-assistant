@@ -21,7 +21,7 @@ def search_hero(name):
             return i
     return 'Not Found'
 
-print(search_hero('batman'))
+#print(search_hero('batman'))
 # returning HTML text // edit code <-- problem is with heroku.. check later
 # How to return multiple heroes of the same name ??
 
