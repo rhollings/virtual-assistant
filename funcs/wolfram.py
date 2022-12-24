@@ -22,3 +22,8 @@ def to_respond(question):
 
 #print(to_respond('who is the president of the united states'))
 #print(to_respond('what is pi to the tenth decimal'))
+
+'''
+What other questions can be asked??
+what cannot??
+'''
