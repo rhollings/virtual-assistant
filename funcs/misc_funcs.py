@@ -135,6 +135,8 @@ def dark_joke():
   x.append(line)
   return x
 
+#print(dark_joke())
+
 # Need API's 
 def tell_peom(): 
   # res = API output 
