@@ -10,3 +10,9 @@ from wolfram import to_respond
 question = "what color is the sky"
 
 print(to_respond(question))
+
+'''
+OUTPUT: sky blue
+wanted output: The sky is blue
+how to create sentences?? 
+'''

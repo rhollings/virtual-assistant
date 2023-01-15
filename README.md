@@ -10,7 +10,7 @@ Some commands Arti knows ===>
 search: searches web by opening a new tab or reads results directly from search     
 news: displays latest news  
 jokes/facts: can tell a random joke/fact  
-personalized local db that tracks favorite shows, books etc.     
+personalized local db that tracks favorite shows    
 
 <h3>In House Libraries & Imports</h3>
 
